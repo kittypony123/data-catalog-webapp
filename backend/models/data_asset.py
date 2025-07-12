@@ -70,7 +70,7 @@ class DataAsset(db.Model):
     def __repr__(self):
         return f"<DataAsset {self.asset_name}>"
 
-    def to_dict(self, include_relationships=False):
+    def to_dict(self, include_relationships=False, include_compliance=False):
         data = {
             'asset_id': self.asset_id,
             'asset_name': self.asset_name,
@@ -102,6 +102,11 @@ class DataAsset(db.Model):
         if include_relationships:
             data['upstream_assets'] = [rel.to_dict() for rel in self.upstream_relationships]
             data['downstream_assets'] = [rel.to_dict() for rel in self.downstream_relationships]
+        
+        if include_compliance:
+            # Add compliance summary
+            data['compliance_summary'] = self.get_compliance_summary()
+            data['compliance_details'] = [comp.to_dict() for comp in self.compliance_links]
             
         return data
 
@@ -151,3 +156,67 @@ class DataAsset(db.Model):
                 search_query = search_query.filter(cls.is_public == filters['is_public'])
         
         return search_query
+    
+    def get_compliance_summary(self):
+        """Get compliance summary for this asset"""
+        from .compliance_requirement import AssetCompliance
+        return AssetCompliance.get_compliance_summary_by_asset(self.asset_id)
+    
+    def get_overall_compliance_status(self):
+        """Calculate overall compliance status based on individual requirements"""
+        compliance_summary = self.get_compliance_summary()
+        total = compliance_summary.get('total', 0)
+        
+        if total == 0:
+            return 'Not Assessed'
+        
+        non_compliant = compliance_summary.get('non_compliant', 0)
+        pending = compliance_summary.get('pending', 0)
+        compliant = compliance_summary.get('compliant', 0)
+        
+        if non_compliant > 0:
+            return 'Non-Compliant'
+        elif pending > 0:
+            return 'Pending'
+        elif compliant == total:
+            return 'Compliant'
+        else:
+            return 'Partial'
+    
+    def get_risk_score(self):
+        """Calculate risk score based on compliance, sensitivity, and quality"""
+        base_score = 0
+        
+        # Compliance risk (40% weight)
+        compliance_status = self.get_overall_compliance_status()
+        compliance_scores = {
+            'Compliant': 0,
+            'Partial': 25,
+            'Pending': 50,
+            'Non-Compliant': 100,
+            'Not Assessed': 75
+        }
+        base_score += compliance_scores.get(compliance_status, 75) * 0.4
+        
+        # Data sensitivity risk (30% weight)
+        if self.is_sensitive:
+            base_score += 50 * 0.3
+        
+        access_level_scores = {
+            'Public': 0,
+            'Internal': 10,
+            'Restricted': 30,
+            'Confidential': 50
+        }
+        base_score += access_level_scores.get(self.access_level, 10) * 0.3
+        
+        # Data quality risk (30% weight)
+        if self.data_quality_score:
+            # Lower quality = higher risk
+            quality_risk = (1 - self.data_quality_score) * 100
+            base_score += quality_risk * 0.3
+        else:
+            # No quality assessment = medium risk
+            base_score += 50 * 0.3
+        
+        return min(100, max(0, round(base_score, 1)))

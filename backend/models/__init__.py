@@ -11,6 +11,9 @@ from .asset_relationship import AssetRelationship
 from .approval_history import ApprovalHistory
 from .user_favorite import UserFavorite
 from .team import Team, TeamMember
+from .compliance_requirement import ComplianceRequirement, AssetCompliance
+from .business_glossary import BusinessTerm, TermUsage
+from .field_compliance import DataField, FieldCompliance
 
 __all__ = [
     'db',
@@ -18,5 +21,8 @@ __all__ = [
     'Category', 'ReportType', 
     'DataAsset', 'AssetRelationship',
     'ApprovalHistory', 'UserFavorite',
-    'Team', 'TeamMember'
+    'Team', 'TeamMember',
+    'ComplianceRequirement', 'AssetCompliance',
+    'BusinessTerm', 'TermUsage',
+    'DataField', 'FieldCompliance'
 ]

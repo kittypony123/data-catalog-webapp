@@ -30,6 +30,11 @@ def create_app(config_name=None):
     from backend.routes.users import users_bp
     from backend.routes.teams import teams_bp
     from backend.routes.search import search_bp
+    from backend.routes.compliance import compliance_bp
+    from backend.routes.business_glossary import business_glossary_bp
+    from backend.routes.dashboard import dashboard_bp
+    from backend.routes.field_compliance import field_compliance_bp
+    from backend.routes.lineage import lineage_bp
     
     # API versioning
     api_prefix = f"/api/{app.config['API_VERSION']}"
@@ -41,6 +46,11 @@ def create_app(config_name=None):
     app.register_blueprint(users_bp, url_prefix=f"{api_prefix}/users")
     app.register_blueprint(teams_bp, url_prefix=f"{api_prefix}/teams")
     app.register_blueprint(search_bp, url_prefix=f"{api_prefix}/search")
+    app.register_blueprint(compliance_bp, url_prefix=f"{api_prefix}/compliance")
+    app.register_blueprint(business_glossary_bp, url_prefix=f"{api_prefix}/glossary")
+    app.register_blueprint(dashboard_bp, url_prefix=f"{api_prefix}/dashboard")
+    app.register_blueprint(field_compliance_bp, url_prefix=f"{api_prefix}/fields")
+    app.register_blueprint(lineage_bp, url_prefix=f"{api_prefix}/lineage")
     
     # Health check endpoint
     @app.route('/health')

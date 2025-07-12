@@ -487,6 +487,1908 @@
         .gap-4 {
             gap: 1rem;
         }
+
+        /* Enhanced Dashboard Styles */
+        .alerts-container {
+            margin-bottom: 2rem;
+        }
+
+        .alert {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-left: 4px solid;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .alert-high {
+            border-left-color: #ef4444;
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0.02));
+        }
+
+        .alert-warning {
+            border-left-color: #f59e0b;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), rgba(245, 158, 11, 0.02));
+        }
+
+        .alert-info {
+            border-left-color: #06b6d4;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.05), rgba(6, 182, 212, 0.02));
+        }
+
+        .alert-title {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .alert-description {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .tab-navigation {
+            display: flex;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 1rem;
+            padding: 0.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background: transparent;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            color: #6b7280;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        }
+
+        .tab-button:hover:not(.active) {
+            background: rgba(79, 70, 229, 0.1);
+            color: #4f46e5;
+        }
+
+        .stat-change {
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+            color: #6b7280;
+        }
+
+        .stat-change.positive {
+            color: #10b981;
+        }
+
+        .stat-change.warning {
+            color: #f59e0b;
+        }
+
+        .dashboard-charts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .chart-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .chart {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+        }
+
+        .chart-tooltip {
+            position: absolute;
+            text-align: center;
+            padding: 8px 12px;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 6px;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .compliance-breakdown, .glossary-breakdown {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .breakdown-items {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .breakdown-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(79, 70, 229, 0.05);
+            border-radius: 0.75rem;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .status-indicator.compliant {
+            background: #10b981;
+        }
+
+        .status-indicator.non_compliant {
+            background: #ef4444;
+        }
+
+        .status-indicator.pending {
+            background: #f59e0b;
+        }
+
+        .status-indicator.not_applicable {
+            background: #6b7280;
+        }
+
+        .status-label {
+            flex: 1;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .status-count {
+            font-weight: 600;
+            color: #1f2937;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .quick-actions {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .quick-actions h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        /* Asset Detail Views Styles */
+        .filters-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-input-container {
+            position: relative;
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6b7280;
+            width: 20px;
+            height: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.875rem 1.25rem 0.875rem 3rem;
+            border: 2px solid rgba(79, 70, 229, 0.2);
+            border-radius: 0.75rem;
+            font-size: 0.875rem;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .filter-select {
+            padding: 0.875rem 1.25rem;
+            border: 2px solid rgba(79, 70, 229, 0.2);
+            border-radius: 0.75rem;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 0.875rem;
+        }
+
+        .assets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .asset-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .asset-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .asset-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .asset-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 0;
+        }
+
+        .asset-description {
+            color: #6b7280;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .asset-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .compliance-summary {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: rgba(79, 70, 229, 0.05);
+            border-radius: 0.5rem;
+        }
+
+        .compliance-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .compliance-label {
+            font-size: 0.75rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .compliance-value, .risk-score {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .asset-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(79, 70, 229, 0.1);
+            color: #4f46e5;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .tag.large {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        .tag-more {
+            background: rgba(107, 114, 128, 0.1);
+            color: #6b7280;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem;
+            color: #6b7280;
+        }
+
+        .empty-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            color: #d1d5db;
+        }
+
+        /* Asset Detail View Styles */
+        .asset-detail-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: none;
+            border: none;
+            color: #6b7280;
+            cursor: pointer;
+            font-size: 0.875rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(79, 70, 229, 0.1);
+            color: #4f46e5;
+        }
+
+        .asset-title-section {
+            flex: 1;
+            margin: 0 2rem;
+        }
+
+        .asset-detail-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .asset-badges {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .status-badge {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .status-badge.large {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.875rem;
+        }
+
+        .status-badge.sensitive {
+            background: #ef4444;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .asset-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .metrics-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            color: #6b7280;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .detail-tabs {
+            display: flex;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 1rem;
+            padding: 0.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background: transparent;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            color: #6b7280;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: rgba(79, 70, 229, 0.1);
+            color: #4f46e5;
+        }
+
+        .tab-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Overview Tab Styles */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .asset-info-card, .asset-metadata-card {
+            background: rgba(79, 70, 229, 0.02);
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .info-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .info-label {
+            font-weight: 500;
+            color: #6b7280;
+        }
+
+        .info-value {
+            color: #1f2937;
+        }
+
+        .schema-card, .tags-card, .related-assets-card {
+            margin-bottom: 2rem;
+        }
+
+        .schema-json {
+            background: #f8fafc;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-size: 0.875rem;
+            overflow-x: auto;
+        }
+
+        .related-assets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .related-asset-item {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 1px solid rgba(79, 70, 229, 0.1);
+        }
+
+        /* Compliance Tab Styles */
+        .compliance-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .compliance-card {
+            border: 1px solid rgba(79, 70, 229, 0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .compliance-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .compliance-badges {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .risk-badge {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .compliance-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .detail-label {
+            font-size: 0.75rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .detail-value {
+            font-size: 0.875rem;
+            color: #1f2937;
+        }
+
+        .detail-value.overdue {
+            color: #ef4444;
+        }
+
+        .overdue-indicator {
+            font-weight: 600;
+        }
+
+        /* Lineage Tab Styles */
+        .lineage-section {
+            margin-bottom: 2rem;
+        }
+
+        .lineage-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .lineage-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(79, 70, 229, 0.02);
+            border-radius: 0.75rem;
+            border: 1px solid rgba(79, 70, 229, 0.1);
+        }
+
+        .lineage-asset {
+            flex: 1;
+        }
+
+        .lineage-meta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .relationship-type, .asset-category {
+            background: rgba(79, 70, 229, 0.1);
+            color: #4f46e5;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+        }
+
+        /* Glossary Tab Styles */
+        .glossary-terms {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .glossary-term-card {
+            border: 1px solid rgba(79, 70, 229, 0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .term-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .term-badges {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .verified-badge, .confidence-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .verified-badge {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+
+        .confidence-badge {
+            background: rgba(79, 70, 229, 0.1);
+            color: #4f46e5;
+        }
+
+        .term-meta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .term-domain, .term-type, .term-status {
+            background: rgba(107, 114, 128, 0.1);
+            color: #6b7280;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+        }
+
+        /* History Tab Styles */
+        .history-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .history-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        }
+
+        .history-entry {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .history-marker {
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        }
+
+        .history-card {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 1px solid rgba(79, 70, 229, 0.1);
+        }
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .history-action {
+            font-weight: 600;
+            color: #1f2937;
+            text-transform: capitalize;
+        }
+
+        .history-date {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .old-status, .new-status {
+            font-weight: 600;
+            padding: 0.125rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+        }
+
+        .old-status {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+        }
+
+        .new-status {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+
+        /* Field-Level Compliance Styles */
+        .fields-content {
+            padding: 0;
+        }
+
+        .fields-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .fields-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .fields-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .field-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(79, 70, 229, 0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .field-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: rgba(79, 70, 229, 0.3);
+        }
+
+        .field-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .field-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 0;
+        }
+
+        .field-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .sensitivity-badge {
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .privacy-badge {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .field-details {
+            margin-bottom: 1rem;
+        }
+
+        .field-type, .business-name {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .field-details .label {
+            font-weight: 500;
+            color: #6b7280;
+            min-width: 60px;
+        }
+
+        .field-details .value {
+            color: #1f2937;
+        }
+
+        .field-description {
+            color: #6b7280;
+            font-size: 0.875rem;
+            line-height: 1.4;
+            margin-top: 0.5rem;
+        }
+
+        .field-compliance-summary {
+            background: rgba(79, 70, 229, 0.05);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .field-compliance-summary h5 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+        }
+
+        .compliance-metrics {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .compliance-metrics .metric {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .metric-value {
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .field-meta {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            background: rgba(107, 114, 128, 0.1);
+            color: #6b7280;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .empty-fields {
+            text-align: center;
+            padding: 4rem;
+            color: #6b7280;
+        }
+
+        /* Field Detail Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-content.large {
+            width: 800px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 0;
+        }
+
+        .close-button {
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            color: #6b7280;
+            transition: all 0.2s ease;
+        }
+
+        .close-button:hover {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+        }
+
+        .field-detail-tabs {
+            display: flex;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 0 2rem;
+        }
+
+        .field-detail-tabs .tab-btn {
+            padding: 1rem 1.5rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 500;
+            color: #6b7280;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .field-detail-tabs .tab-btn.active {
+            color: #4f46e5;
+            border-bottom-color: #4f46e5;
+        }
+
+        .modal-body {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .field-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .field-info-grid .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .field-info-grid .label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #6b7280;
+        }
+
+        .field-info-grid .value {
+            font-size: 1rem;
+            color: #1f2937;
+        }
+
+        .field-description-section {
+            margin-bottom: 2rem;
+        }
+
+        .field-description-section h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+        }
+
+        .valid-values-section {
+            margin-bottom: 2rem;
+        }
+
+        .valid-values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .valid-value {
+            background: rgba(79, 70, 229, 0.1);
+            color: #4f46e5;
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .compliance-requirements {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .compliance-requirement-card {
+            border: 1px solid rgba(79, 70, 229, 0.1);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            background: rgba(79, 70, 229, 0.02);
+        }
+
+        .compliance-requirement-card h5 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .compliance-status-info {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .compliance-status-info .status,
+        .compliance-status-info .risk-level {
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .privacy-flags h4,
+        .security-requirements h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-indicators {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .privacy-flag {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .no-privacy {
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        .security-info {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .security-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 0.75rem;
+            border: 1px solid rgba(79, 70, 229, 0.1);
+        }
+
+        .security-item .label {
+            font-weight: 500;
+            color: #6b7280;
+        }
+
+        .security-item .value {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Advanced Search Styles */
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .search-input-section {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .search-input-container {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-input-container .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid rgba(79, 70, 229, 0.1);
+            border-radius: 0.75rem;
+            font-size: 1.125rem;
+            background: rgba(249, 250, 251, 0.5);
+            transition: all 0.2s ease;
+        }
+
+        .search-input-container .search-input:focus {
+            border-color: #4f46e5;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .search-input-container .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            color: #6b7280;
+        }
+
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .suggestion-item {
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .suggestion-item:hover {
+            background: rgba(79, 70, 229, 0.05);
+        }
+
+        .search-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filters-panel {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .filter-section {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            background: rgba(249, 250, 251, 0.5);
+        }
+
+        .filter-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .filter-checkbox {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .filter-checkbox input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkmark {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            margin-right: 0.75rem;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .filter-checkbox input[type="checkbox"]:checked + .checkmark {
+            background: #4f46e5;
+            border-color: #4f46e5;
+        }
+
+        .filter-checkbox input[type="checkbox"]:checked + .checkmark::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 2px;
+            width: 4px;
+            height: 8px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .filter-label {
+            flex: 1;
+            font-size: 0.875rem;
+            color: #374151;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .filter-count {
+            color: #6b7280;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .search-results {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .results-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .search-results-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .search-result-item {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .search-result-item:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .result-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 0;
+            flex: 1;
+            margin-right: 1rem;
+        }
+
+        .result-title mark {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(124, 58, 237, 0.2));
+            color: #4f46e5;
+            padding: 0.125rem 0.25rem;
+            border-radius: 0.25rem;
+            font-weight: 700;
+        }
+
+        .result-badges {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .relevance-score {
+            background: rgba(79, 70, 229, 0.1);
+            color: #4f46e5;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .result-content {
+            margin-bottom: 1.5rem;
+        }
+
+        .result-description {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .result-description mark {
+            background: rgba(251, 191, 36, 0.3);
+            color: #d97706;
+            padding: 0.125rem 0.25rem;
+            border-radius: 0.25rem;
+        }
+
+        .result-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .result-meta .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .result-meta .meta-item i {
+            width: 16px;
+            height: 16px;
+        }
+
+        .result-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .result-tags .tag mark {
+            background: rgba(34, 197, 94, 0.3);
+            color: #16a34a;
+            padding: 0.125rem 0.25rem;
+            border-radius: 0.25rem;
+        }
+
+        .result-compliance {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem;
+            background: rgba(249, 250, 251, 0.5);
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .compliance-label {
+            font-weight: 500;
+            color: #6b7280;
+        }
+
+        .compliance-status {
+            font-weight: 600;
+        }
+
+        .risk-score {
+            color: #6b7280;
+            font-size: 0.75rem;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .result-actions .btn {
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #6b7280;
+        }
+
+        .no-results h3 {
+            margin: 1rem 0 0.5rem 0;
+            color: #374151;
+        }
+
+        .no-results p {
+            margin-bottom: 2rem;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding: 2rem 0;
+        }
+
+        .pagination-info {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive Search Styles */
+        @media (max-width: 768px) {
+            .search-input-section {
+                padding: 1.5rem;
+            }
+
+            .search-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .result-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .result-badges {
+                align-self: flex-start;
+            }
+
+            .result-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .result-actions {
+                flex-direction: column;
+            }
+
+            .pagination {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Data Lineage Visualization Styles */
+        .lineage-controls {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .view-mode-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .lineage-filters {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .lineage-overview {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .overview-section {
+            background: rgba(249, 250, 251, 0.5);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .overview-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .connected-assets-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .connected-asset-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .asset-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .asset-name {
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        .relationship-count {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .external-systems-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .external-system-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .system-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .system-name {
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        .connection-count {
+            font-size: 0.875rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .relationship-types-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .relationship-type-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .type-name {
+            font-weight: 500;
+            color: #1f2937;
+            text-transform: capitalize;
+        }
+
+        .type-count {
+            font-size: 0.875rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .lineage-visualization {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .no-selection {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #6b7280;
+        }
+
+        .no-selection h3 {
+            margin: 1rem 0 0.5rem 0;
+            color: #374151;
+        }
+
+        .no-selection p {
+            margin-bottom: 2rem;
+        }
+
+        .lineage-graph-container {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+
+        .lineage-stats {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem;
+            background: rgba(249, 250, 251, 0.8);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .lineage-graph {
+            width: 100%;
+            height: 800px;
+            background: #fafafa;
+            cursor: grab;
+        }
+
+        .lineage-graph:active {
+            cursor: grabbing;
+        }
+
+        /* D3.js Graph Styling */
+        .lineage-graph .nodes circle {
+            transition: all 0.3s ease;
+        }
+
+        .lineage-graph .nodes circle:hover {
+            stroke-width: 4px;
+            filter: brightness(1.1);
+        }
+
+        .lineage-graph .edges line {
+            transition: all 0.3s ease;
+        }
+
+        .lineage-graph .edges line:hover {
+            stroke-width: 3px;
+        }
+
+        .lineage-graph .legend {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Lineage Styles */
+        @media (max-width: 768px) {
+            .lineage-filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .view-mode-selector {
+                flex-direction: column;
+            }
+
+            .overview-sections {
+                grid-template-columns: 1fr;
+            }
+
+            .connected-asset-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .external-system-item,
+            .relationship-type-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .lineage-graph {
+                height: 600px;
+            }
+
+            .lineage-stats {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -675,6 +2577,7 @@
                     title: 'Data Management',
                     items: [
                         { id: 'assets', label: 'Data Assets', icon: 'database' },
+                        { id: 'lineage', label: 'Data Lineage', icon: 'git-branch' },
                         { id: 'categories', label: 'Categories', icon: 'folder' },
                         { id: 'report-types', label: 'Report Types', icon: 'file-text' }
                     ]
@@ -767,6 +2670,7 @@
                 'dashboard': <DashboardView user={user} setCurrentView={setCurrentView} />,
                 'search': <SearchView user={user} />,
                 'assets': <AssetsView user={user} />,
+                'lineage': <LineageView user={user} />,
                 'categories': <CategoriesView user={user} />,
                 'report-types': <ReportTypesView user={user} />,
                 'teams': <TeamsView user={user} />,
@@ -778,37 +2682,135 @@
             return views[currentView] || <div>View not found</div>;
         }
 
-        // Dashboard View
+        // Enhanced Dashboard View with Charts and Compliance
         function DashboardView({ user, setCurrentView }) {
-            const [stats, setStats] = useState(null);
-            const [recentAssets, setRecentAssets] = useState([]);
+            const [dashboardData, setDashboardData] = useState(null);
+            const [alerts, setAlerts] = useState([]);
             const [loading, setLoading] = useState(true);
+            const [activeTab, setActiveTab] = useState('overview');
 
             useEffect(() => {
                 loadDashboardData();
+                loadAlerts();
             }, []);
 
             const loadDashboardData = async () => {
                 try {
-                    const [assetsResponse] = await Promise.all([
-                        api.get('/assets?per_page=5')
-                    ]);
-                    
-                    setRecentAssets(assetsResponse.assets);
-                    
-                    // Mock stats for now
-                    setStats({
-                        totalAssets: assetsResponse.pagination.total,
-                        approvedAssets: assetsResponse.assets.filter(a => a.approval_status === 'Approved').length,
-                        pendingAssets: 12,
-                        totalUsers: 45
-                    });
+                    const response = await api.get('/dashboard');
+                    setDashboardData(response);
                 } catch (err) {
                     console.error('Failed to load dashboard data:', err);
+                    // Fallback to basic stats
+                    setDashboardData({
+                        summary: { total_assets: 0, approved_assets: 0, pending_assets: 0, total_users: 0 },
+                        category_breakdown: [],
+                        compliance: null,
+                        glossary: null
+                    });
                 } finally {
                     setLoading(false);
                 }
             };
+
+            const loadAlerts = async () => {
+                try {
+                    const response = await api.get('/dashboard/alerts');
+                    setAlerts(response.alerts || []);
+                } catch (err) {
+                    console.error('Failed to load alerts:', err);
+                }
+            };
+
+            const createChart = (containerId, data, type = 'donut') => {
+                const container = document.getElementById(containerId);
+                if (!container || !data) return;
+
+                // Clear previous chart
+                d3.select(container).selectAll("*").remove();
+
+                const width = 300;
+                const height = 300;
+                const radius = Math.min(width, height) / 2 - 20;
+
+                const svg = d3.select(container)
+                    .append("svg")
+                    .attr("width", width)
+                    .attr("height", height);
+
+                const g = svg.append("g")
+                    .attr("transform", `translate(${width / 2}, ${height / 2})`);
+
+                const color = d3.scaleOrdinal()
+                    .domain(data.map(d => d.label))
+                    .range(['#4f46e5', '#7c3aed', '#06b6d4', '#10b981', '#f59e0b', '#ef4444']);
+
+                const pie = d3.pie()
+                    .value(d => d.value)
+                    .sort(null);
+
+                const arc = d3.arc()
+                    .innerRadius(type === 'donut' ? radius * 0.6 : 0)
+                    .outerRadius(radius);
+
+                const arcs = g.selectAll(".arc")
+                    .data(pie(data))
+                    .enter().append("g")
+                    .attr("class", "arc");
+
+                arcs.append("path")
+                    .attr("d", arc)
+                    .attr("fill", d => color(d.data.label))
+                    .style("opacity", 0.8)
+                    .on("mouseover", function(event, d) {
+                        d3.select(this).style("opacity", 1);
+                        // Show tooltip
+                        const tooltip = d3.select("body").append("div")
+                            .attr("class", "chart-tooltip")
+                            .style("opacity", 0);
+                        
+                        tooltip.transition().duration(200).style("opacity", .9);
+                        tooltip.html(`${d.data.label}: ${d.data.value}`)
+                            .style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function(d) {
+                        d3.select(this).style("opacity", 0.8);
+                        d3.selectAll(".chart-tooltip").remove();
+                    });
+
+                // Add labels for larger slices
+                arcs.append("text")
+                    .attr("transform", d => `translate(${arc.centroid(d)})`)
+                    .attr("dy", "0.35em")
+                    .style("text-anchor", "middle")
+                    .style("font-size", "12px")
+                    .style("fill", "white")
+                    .style("font-weight", "bold")
+                    .text(d => d.data.value > 0 ? d.data.value : '');
+            };
+
+            useEffect(() => {
+                if (dashboardData && activeTab === 'overview') {
+                    // Create category breakdown chart
+                    if (dashboardData.category_breakdown?.length > 0) {
+                        const categoryData = dashboardData.category_breakdown.map(item => ({
+                            label: item.category,
+                            value: item.count
+                        }));
+                        createChart('category-chart', categoryData);
+                    }
+
+                    // Create compliance status chart if available
+                    if (dashboardData.compliance?.compliance_breakdown) {
+                        const complianceData = Object.entries(dashboardData.compliance.compliance_breakdown)
+                            .map(([status, count]) => ({
+                                label: status.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase()),
+                                value: count
+                            }));
+                        createChart('compliance-chart', complianceData);
+                    }
+                }
+            }, [dashboardData, activeTab]);
 
             if (loading) {
                 return (
@@ -819,6 +2821,8 @@
                 );
             }
 
+            const { summary, compliance, glossary } = dashboardData || {};
+
             return (
                 <div className="fade-in">
                     <div className="page-header">
@@ -828,74 +2832,233 @@
                         </p>
                     </div>
 
-                    <div className="stats-grid">
-                        <div className="stat-card">
-                            <i data-lucide="database" className="stat-icon"></i>
-                            <div className="stat-value">{stats?.totalAssets || 0}</div>
-                            <div className="stat-label">Total Data Assets</div>
+                    {/* Alerts Section */}
+                    {alerts.length > 0 && (
+                        <div className="alerts-container">
+                            {alerts.slice(0, 3).map((alert, index) => (
+                                <div key={index} className={`alert alert-${alert.severity}`}>
+                                    <div className="alert-content">
+                                        <h4 className="alert-title">{alert.title}</h4>
+                                        <p className="alert-description">{alert.description}</p>
+                                    </div>
+                                    <div className="alert-actions">
+                                        <button className="btn btn-sm">View Details</button>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
+                    )}
 
-                        <div className="stat-card">
-                            <i data-lucide="check-circle" className="stat-icon"></i>
-                            <div className="stat-value">{stats?.approvedAssets || 0}</div>
-                            <div className="stat-label">Approved Assets</div>
-                        </div>
-
-                        <div className="stat-card">
-                            <i data-lucide="clock" className="stat-icon"></i>
-                            <div className="stat-value">{stats?.pendingAssets || 0}</div>
-                            <div className="stat-label">Pending Review</div>
-                        </div>
-
-                        <div className="stat-card">
-                            <i data-lucide="users" className="stat-icon"></i>
-                            <div className="stat-value">{stats?.totalUsers || 0}</div>
-                            <div className="stat-label">Active Users</div>
-                        </div>
+                    {/* Tab Navigation */}
+                    <div className="tab-navigation">
+                        <button 
+                            className={`tab-button ${activeTab === 'overview' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('overview')}
+                        >
+                            <i data-lucide="bar-chart-3"></i>
+                            Overview
+                        </button>
+                        {compliance && (
+                            <button 
+                                className={`tab-button ${activeTab === 'compliance' ? 'active' : ''}`}
+                                onClick={() => setActiveTab('compliance')}
+                            >
+                                <i data-lucide="shield-check"></i>
+                                Compliance
+                            </button>
+                        )}
+                        {glossary && (
+                            <button 
+                                className={`tab-button ${activeTab === 'glossary' ? 'active' : ''}`}
+                                onClick={() => setActiveTab('glossary')}
+                            >
+                                <i data-lucide="book-open"></i>
+                                Glossary
+                            </button>
+                        )}
                     </div>
 
-                    <div className="table-container">
-                        <div className="table-header">
-                            <h2 className="table-title">Recent Data Assets</h2>
+                    {/* Overview Tab */}
+                    {activeTab === 'overview' && (
+                        <>
+                            <div className="stats-grid">
+                                <div className="stat-card">
+                                    <i data-lucide="database" className="stat-icon"></i>
+                                    <div className="stat-value">{summary?.total_assets || 0}</div>
+                                    <div className="stat-label">Total Data Assets</div>
+                                    <div className="stat-change positive">
+                                        +{summary?.assets_last_30_days || 0} this month
+                                    </div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <i data-lucide="check-circle" className="stat-icon"></i>
+                                    <div className="stat-value">{summary?.approved_assets || 0}</div>
+                                    <div className="stat-label">Approved Assets</div>
+                                    <div className="stat-change">
+                                        {summary?.approval_percentage || 0}% approval rate
+                                    </div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <i data-lucide="clock" className="stat-icon"></i>
+                                    <div className="stat-value">{summary?.pending_assets || 0}</div>
+                                    <div className="stat-label">Pending Review</div>
+                                    <div className="stat-change warning">
+                                        Requires attention
+                                    </div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <i data-lucide="users" className="stat-icon"></i>
+                                    <div className="stat-value">{summary?.active_users || 0}</div>
+                                    <div className="stat-label">Active Users</div>
+                                    <div className="stat-change">
+                                        {summary?.active_contributors || 0} contributors
+                                    </div>
+                                </div>
+
+                                {summary?.avg_quality_score && (
+                                    <div className="stat-card">
+                                        <i data-lucide="star" className="stat-icon"></i>
+                                        <div className="stat-value">{summary.avg_quality_score}</div>
+                                        <div className="stat-label">Avg Quality Score</div>
+                                        <div className="stat-change">
+                                            Out of 1.0
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className="dashboard-charts">
+                                <div className="chart-container">
+                                    <h3 className="chart-title">Assets by Category</h3>
+                                    <div id="category-chart" className="chart"></div>
+                                </div>
+
+                                {compliance && (
+                                    <div className="chart-container">
+                                        <h3 className="chart-title">Compliance Status</h3>
+                                        <div id="compliance-chart" className="chart"></div>
+                                    </div>
+                                )}
+                            </div>
+                        </>
+                    )}
+
+                    {/* Compliance Tab */}
+                    {activeTab === 'compliance' && compliance && (
+                        <div className="compliance-dashboard">
+                            <div className="stats-grid">
+                                <div className="stat-card">
+                                    <i data-lucide="shield" className="stat-icon"></i>
+                                    <div className="stat-value">{compliance.total_requirements}</div>
+                                    <div className="stat-label">Total Requirements</div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <i data-lucide="check-shield" className="stat-icon"></i>
+                                    <div className="stat-value">{compliance.compliance_percentage}%</div>
+                                    <div className="stat-label">Compliance Rate</div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <i data-lucide="alert-triangle" className="stat-icon"></i>
+                                    <div className="stat-value">{compliance.overdue_reviews}</div>
+                                    <div className="stat-label">Overdue Reviews</div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <i data-lucide="link" className="stat-icon"></i>
+                                    <div className="stat-value">{compliance.total_compliance_links}</div>
+                                    <div className="stat-label">Total Assessments</div>
+                                </div>
+                            </div>
+
+                            <div className="compliance-breakdown">
+                                <h3>Compliance Status Breakdown</h3>
+                                <div className="breakdown-items">
+                                    {Object.entries(compliance.compliance_breakdown || {}).map(([status, count]) => (
+                                        <div key={status} className="breakdown-item">
+                                            <span className={`status-indicator ${status.toLowerCase()}`}></span>
+                                            <span className="status-label">
+                                                {status.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                                            </span>
+                                            <span className="status-count">{count}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Glossary Tab */}
+                    {activeTab === 'glossary' && glossary && (
+                        <div className="glossary-dashboard">
+                            <div className="stats-grid">
+                                <div className="stat-card">
+                                    <i data-lucide="book" className="stat-icon"></i>
+                                    <div className="stat-value">{glossary.total_terms}</div>
+                                    <div className="stat-label">Total Terms</div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <i data-lucide="check-circle" className="stat-icon"></i>
+                                    <div className="stat-value">{glossary.approval_percentage}%</div>
+                                    <div className="stat-label">Approval Rate</div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <i data-lucide="link" className="stat-icon"></i>
+                                    <div className="stat-value">{glossary.total_term_usage}</div>
+                                    <div className="stat-label">Usage Links</div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <i data-lucide="clock" className="stat-icon"></i>
+                                    <div className="stat-value">{glossary.terms_needing_review}</div>
+                                    <div className="stat-label">Need Review</div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    <div className="quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div className="action-buttons">
                             <button 
-                                className="btn btn-primary"
+                                className="action-btn"
                                 onClick={() => setCurrentView('assets')}
                             >
                                 <i data-lucide="plus"></i>
-                                Create Asset
+                                Create Data Asset
                             </button>
+                            <button 
+                                className="action-btn"
+                                onClick={() => setCurrentView('search')}
+                            >
+                                <i data-lucide="search"></i>
+                                Search Assets
+                            </button>
+                            {compliance && (
+                                <button 
+                                    className="action-btn"
+                                    onClick={() => setCurrentView('compliance')}
+                                >
+                                    <i data-lucide="shield"></i>
+                                    Review Compliance
+                                </button>
+                            )}
+                            {glossary && (
+                                <button 
+                                    className="action-btn"
+                                    onClick={() => setCurrentView('glossary')}
+                                >
+                                    <i data-lucide="book"></i>
+                                    Manage Glossary
+                                </button>
+                            )}
                         </div>
-                        <table className="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Asset Name</th>
-                                    <th>Category</th>
-                                    <th>Owner</th>
-                                    <th>Status</th>
-                                    <th>Created</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {recentAssets.map(asset => (
-                                    <tr key={asset.asset_id}>
-                                        <td>
-                                            <div className="font-semibold">{asset.asset_name}</div>
-                                            <div className="text-gray text-sm">{asset.description?.substring(0, 50)}...</div>
-                                        </td>
-                                        <td>{asset.category?.category_name || 'Uncategorized'}</td>
-                                        <td>{asset.owner?.display_name || 'Unknown'}</td>
-                                        <td>
-                                            <span className={`status-badge ${asset.approval_status.toLowerCase()}`}>
-                                                {asset.approval_status}
-                                            </span>
-                                        </td>
-                                        <td className="text-sm text-gray">
-                                            {new Date(asset.created_at).toLocaleDateString()}
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             );
@@ -903,22 +3066,1216 @@
 
         // Placeholder Views
         function SearchView({ user }) {
+            const [searchState, setSearchState] = useState({
+                query: '',
+                results: [],
+                facets: {},
+                loading: false,
+                error: null,
+                pagination: {},
+                filters: {
+                    category_ids: [],
+                    report_type_ids: [],
+                    approval_statuses: [],
+                    owner_ids: [],
+                    access_levels: [],
+                    source_systems: [],
+                    is_public: null,
+                    is_sensitive: null,
+                    has_compliance: null
+                },
+                sortBy: 'relevance',
+                sortOrder: 'desc',
+                showFilters: true
+            });
+
+            const [suggestions, setSuggestions] = useState([]);
+            const [showSuggestions, setShowSuggestions] = useState(false);
+
+            // Debounced search function
+            const debouncedSearch = useCallback(
+                debounce((query, filters, sortBy, sortOrder, page = 1) => {
+                    performSearch(query, filters, sortBy, sortOrder, page);
+                }, 300),
+                []
+            );
+
+            useEffect(() => {
+                // Load initial facets
+                loadFacets();
+            }, []);
+
+            useEffect(() => {
+                if (searchState.query || Object.values(searchState.filters).some(f => 
+                    Array.isArray(f) ? f.length > 0 : f !== null
+                )) {
+                    debouncedSearch(
+                        searchState.query, 
+                        searchState.filters, 
+                        searchState.sortBy, 
+                        searchState.sortOrder
+                    );
+                }
+            }, [searchState.query, searchState.filters, searchState.sortBy, searchState.sortOrder]);
+
+            const loadFacets = async () => {
+                try {
+                    const response = await api.get('/search/facets');
+                    setSearchState(prev => ({
+                        ...prev,
+                        facets: response.facets
+                    }));
+                } catch (error) {
+                    console.error('Failed to load facets:', error);
+                }
+            };
+
+            const performSearch = async (query, filters, sortBy, sortOrder, page = 1) => {
+                try {
+                    setSearchState(prev => ({ ...prev, loading: true, error: null }));
+                    
+                    const params = new URLSearchParams();
+                    if (query) params.append('q', query);
+                    if (sortBy) params.append('sort_by', sortBy);
+                    if (sortOrder) params.append('sort_order', sortOrder);
+                    params.append('page', page.toString());
+                    
+                    // Add filters to params
+                    filters.category_ids.forEach(id => params.append('category_id', id));
+                    filters.report_type_ids.forEach(id => params.append('report_type_id', id));
+                    filters.approval_statuses.forEach(status => params.append('status', status));
+                    filters.owner_ids.forEach(id => params.append('owner_id', id));
+                    filters.access_levels.forEach(level => params.append('access_level', level));
+                    filters.source_systems.forEach(sys => params.append('source_system', sys));
+                    
+                    if (filters.is_public !== null) params.append('is_public', filters.is_public);
+                    if (filters.is_sensitive !== null) params.append('is_sensitive', filters.is_sensitive);
+                    if (filters.has_compliance !== null) params.append('has_compliance', filters.has_compliance);
+                    
+                    const response = await api.get(`/search?${params}`);
+                    
+                    setSearchState(prev => ({
+                        ...prev,
+                        results: response.results,
+                        facets: response.facets,
+                        pagination: response.pagination,
+                        loading: false
+                    }));
+                } catch (error) {
+                    setSearchState(prev => ({
+                        ...prev,
+                        loading: false,
+                        error: 'Search failed. Please try again.'
+                    }));
+                }
+            };
+
+            const loadSuggestions = async (query) => {
+                if (query.length < 2) {
+                    setSuggestions([]);
+                    setShowSuggestions(false);
+                    return;
+                }
+                
+                try {
+                    const response = await api.get(`/search/suggestions?q=${encodeURIComponent(query)}`);
+                    setSuggestions(response.suggestions);
+                    setShowSuggestions(true);
+                } catch (error) {
+                    console.error('Failed to load suggestions:', error);
+                }
+            };
+
+            const handleQueryChange = (query) => {
+                setSearchState(prev => ({ ...prev, query }));
+                loadSuggestions(query);
+            };
+
+            const handleFilterChange = (filterType, value, checked) => {
+                setSearchState(prev => {
+                    const newFilters = { ...prev.filters };
+                    
+                    if (Array.isArray(newFilters[filterType])) {
+                        if (checked) {
+                            newFilters[filterType] = [...newFilters[filterType], value];
+                        } else {
+                            newFilters[filterType] = newFilters[filterType].filter(v => v !== value);
+                        }
+                    } else {
+                        newFilters[filterType] = checked ? value : null;
+                    }
+                    
+                    return { ...prev, filters: newFilters };
+                });
+            };
+
+            const clearAllFilters = () => {
+                setSearchState(prev => ({
+                    ...prev,
+                    filters: {
+                        category_ids: [],
+                        report_type_ids: [],
+                        approval_statuses: [],
+                        owner_ids: [],
+                        access_levels: [],
+                        source_systems: [],
+                        is_public: null,
+                        is_sensitive: null,
+                        has_compliance: null
+                    }
+                }));
+            };
+
+            const getActiveFilterCount = () => {
+                const { filters } = searchState;
+                let count = 0;
+                
+                Object.values(filters).forEach(filter => {
+                    if (Array.isArray(filter)) {
+                        count += filter.length;
+                    } else if (filter !== null) {
+                        count += 1;
+                    }
+                });
+                
+                return count;
+            };
+
             return (
                 <div className="fade-in">
                     <div className="page-header">
-                        <h1 className="page-title">Search Data Assets</h1>
+                        <h1 className="page-title">Advanced Search</h1>
                         <p className="page-subtitle">
-                            Find data assets across your organization
+                            Find data assets with powerful filtering and faceted search
                         </p>
                     </div>
-                    <div className="card">
-                        <p>Search functionality coming soon...</p>
+
+                    <div className="search-container">
+                        {/* Search Input */}
+                        <div className="search-input-section">
+                            <div className="search-input-container" style={{ position: 'relative' }}>
+                                <i data-lucide="search" className="search-icon"></i>
+                                <input
+                                    type="text"
+                                    placeholder="Search assets by name, description, tags, or source system..."
+                                    className="search-input"
+                                    value={searchState.query}
+                                    onChange={(e) => handleQueryChange(e.target.value)}
+                                    onFocus={() => setShowSuggestions(suggestions.length > 0)}
+                                    onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+                                />
+                                
+                                {/* Search Suggestions */}
+                                {showSuggestions && suggestions.length > 0 && (
+                                    <div className="search-suggestions">
+                                        {suggestions.map((suggestion, idx) => (
+                                            <div 
+                                                key={idx}
+                                                className="suggestion-item"
+                                                onClick={() => {
+                                                    handleQueryChange(suggestion.text);
+                                                    setShowSuggestions(false);
+                                                }}
+                                            >
+                                                <i data-lucide={suggestion.type === 'asset' ? 'database' : 'folder'} 
+                                                   style={{ width: '16px', height: '16px', marginRight: '0.5rem', color: '#6b7280' }}></i>
+                                                <span style={{ fontWeight: '500' }}>{suggestion.text}</span>
+                                                <span style={{ color: '#6b7280', fontSize: '0.875rem', marginLeft: 'auto' }}>
+                                                    {suggestion.category}
+                                                </span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                            
+                            {/* Search Controls */}
+                            <div className="search-controls">
+                                <button 
+                                    className={`btn ${searchState.showFilters ? 'btn-primary' : 'btn-secondary'}`}
+                                    onClick={() => setSearchState(prev => ({ ...prev, showFilters: !prev.showFilters }))}
+                                >
+                                    <i data-lucide="filter"></i>
+                                    Filters {getActiveFilterCount() > 0 && `(${getActiveFilterCount()})`}
+                                </button>
+                                
+                                <select 
+                                    className="filter-select"
+                                    value={`${searchState.sortBy}-${searchState.sortOrder}`}
+                                    onChange={(e) => {
+                                        const [sortBy, sortOrder] = e.target.value.split('-');
+                                        setSearchState(prev => ({ ...prev, sortBy, sortOrder }));
+                                    }}
+                                >
+                                    <option value="relevance-desc">Relevance</option>
+                                    <option value="name-asc">Name (A-Z)</option>
+                                    <option value="name-desc">Name (Z-A)</option>
+                                    <option value="created_date-desc">Newest First</option>
+                                    <option value="created_date-asc">Oldest First</option>
+                                    <option value="updated_date-desc">Recently Updated</option>
+                                </select>
+                                
+                                {getActiveFilterCount() > 0 && (
+                                    <button className="btn btn-outline" onClick={clearAllFilters}>
+                                        <i data-lucide="x"></i>
+                                        Clear All
+                                    </button>
+                                )}
+                            </div>
+                        </div>
+
+                        {/* Filters Panel */}
+                        {searchState.showFilters && (
+                            <div className="filters-panel">
+                                <div className="filters-grid">
+                                    {/* Categories Filter */}
+                                    {searchState.facets.categories && searchState.facets.categories.length > 0 && (
+                                        <div className="filter-section">
+                                            <h4 className="filter-title">Categories</h4>
+                                            <div className="filter-options">
+                                                {searchState.facets.categories.slice(0, 8).map(category => (
+                                                    <label key={category.id} className="filter-checkbox">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={searchState.filters.category_ids.includes(category.id.toString())}
+                                                            onChange={(e) => handleFilterChange('category_ids', category.id.toString(), e.target.checked)}
+                                                        />
+                                                        <span className="checkmark"></span>
+                                                        <span className="filter-label">
+                                                            {category.name}
+                                                            <span className="filter-count">({category.count})</span>
+                                                        </span>
+                                                    </label>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Report Types Filter */}
+                                    {searchState.facets.report_types && searchState.facets.report_types.length > 0 && (
+                                        <div className="filter-section">
+                                            <h4 className="filter-title">Report Types</h4>
+                                            <div className="filter-options">
+                                                {searchState.facets.report_types.slice(0, 8).map(reportType => (
+                                                    <label key={reportType.id} className="filter-checkbox">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={searchState.filters.report_type_ids.includes(reportType.id.toString())}
+                                                            onChange={(e) => handleFilterChange('report_type_ids', reportType.id.toString(), e.target.checked)}
+                                                        />
+                                                        <span className="checkmark"></span>
+                                                        <span className="filter-label">
+                                                            {reportType.name}
+                                                            <span className="filter-count">({reportType.count})</span>
+                                                        </span>
+                                                    </label>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Status Filter */}
+                                    {searchState.facets.statuses && searchState.facets.statuses.length > 0 && (
+                                        <div className="filter-section">
+                                            <h4 className="filter-title">Status</h4>
+                                            <div className="filter-options">
+                                                {searchState.facets.statuses.map(status => (
+                                                    <label key={status.status} className="filter-checkbox">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={searchState.filters.approval_statuses.includes(status.status)}
+                                                            onChange={(e) => handleFilterChange('approval_statuses', status.status, e.target.checked)}
+                                                        />
+                                                        <span className="checkmark"></span>
+                                                        <span className="filter-label">
+                                                            {status.status}
+                                                            <span className="filter-count">({status.count})</span>
+                                                        </span>
+                                                    </label>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Access Levels Filter */}
+                                    {searchState.facets.access_levels && searchState.facets.access_levels.length > 0 && (
+                                        <div className="filter-section">
+                                            <h4 className="filter-title">Access Level</h4>
+                                            <div className="filter-options">
+                                                {searchState.facets.access_levels.map(level => (
+                                                    <label key={level.level} className="filter-checkbox">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={searchState.filters.access_levels.includes(level.level)}
+                                                            onChange={(e) => handleFilterChange('access_levels', level.level, e.target.checked)}
+                                                        />
+                                                        <span className="checkmark"></span>
+                                                        <span className="filter-label">
+                                                            {level.level}
+                                                            <span className="filter-count">({level.count})</span>
+                                                        </span>
+                                                    </label>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Data Sensitivity Filter */}
+                                    {searchState.facets.sensitivity && searchState.facets.sensitivity.length > 0 && (
+                                        <div className="filter-section">
+                                            <h4 className="filter-title">Data Sensitivity</h4>
+                                            <div className="filter-options">
+                                                {searchState.facets.sensitivity.map(item => (
+                                                    <label key={item.type} className="filter-checkbox">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={
+                                                                item.type === 'Public' ? searchState.filters.is_public === 'true' :
+                                                                item.type === 'Sensitive' ? searchState.filters.is_sensitive === 'true' : false
+                                                            }
+                                                            onChange={(e) => {
+                                                                if (item.type === 'Public') {
+                                                                    handleFilterChange('is_public', 'true', e.target.checked);
+                                                                } else if (item.type === 'Sensitive') {
+                                                                    handleFilterChange('is_sensitive', 'true', e.target.checked);
+                                                                }
+                                                            }}
+                                                        />
+                                                        <span className="checkmark"></span>
+                                                        <span className="filter-label">
+                                                            {item.type}
+                                                            <span className="filter-count">({item.count})</span>
+                                                        </span>
+                                                    </label>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Source Systems Filter */}
+                                    {searchState.facets.source_systems && searchState.facets.source_systems.length > 0 && (
+                                        <div className="filter-section">
+                                            <h4 className="filter-title">Source Systems</h4>
+                                            <div className="filter-options">
+                                                {searchState.facets.source_systems.slice(0, 6).map(system => (
+                                                    <label key={system.system} className="filter-checkbox">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={searchState.filters.source_systems.includes(system.system)}
+                                                            onChange={(e) => handleFilterChange('source_systems', system.system, e.target.checked)}
+                                                        />
+                                                        <span className="checkmark"></span>
+                                                        <span className="filter-label">
+                                                            {system.system}
+                                                            <span className="filter-count">({system.count})</span>
+                                                        </span>
+                                                    </label>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Search Results */}
+                        <div className="search-results">
+                            {searchState.loading && (
+                                <div className="loading">
+                                    <div className="spinner"></div>
+                                    Searching...
+                                </div>
+                            )}
+
+                            {searchState.error && (
+                                <div className="error-message">
+                                    <i data-lucide="alert-circle"></i>
+                                    {searchState.error}
+                                </div>
+                            )}
+
+                            {!searchState.loading && !searchState.error && searchState.results.length === 0 && (searchState.query || getActiveFilterCount() > 0) && (
+                                <div className="no-results">
+                                    <i data-lucide="search-x" style={{ width: '48px', height: '48px', color: '#6b7280' }}></i>
+                                    <h3>No results found</h3>
+                                    <p>Try adjusting your search terms or filters</p>
+                                    {getActiveFilterCount() > 0 && (
+                                        <button className="btn btn-primary" onClick={clearAllFilters}>
+                                            Clear All Filters
+                                        </button>
+                                    )}
+                                </div>
+                            )}
+
+                            {!searchState.loading && searchState.results.length > 0 && (
+                                <div>
+                                    {/* Results Summary */}
+                                    <div className="results-summary">
+                                        <span>
+                                            {searchState.pagination.total} assets found
+                                            {searchState.query && ` for "${searchState.query}"`}
+                                        </span>
+                                        <span className="results-time">
+                                            Page {searchState.pagination.page} of {searchState.pagination.pages}
+                                        </span>
+                                    </div>
+
+                                    {/* Results List */}
+                                    <div className="search-results-list">
+                                        {searchState.results.map(asset => (
+                                            <SearchResultItem 
+                                                key={asset.asset_id} 
+                                                asset={asset} 
+                                                query={searchState.query}
+                                            />
+                                        ))}
+                                    </div>
+
+                                    {/* Pagination */}
+                                    {searchState.pagination.pages > 1 && (
+                                        <div className="pagination">
+                                            <button 
+                                                className="btn btn-outline"
+                                                disabled={!searchState.pagination.has_prev}
+                                                onClick={() => performSearch(
+                                                    searchState.query, 
+                                                    searchState.filters, 
+                                                    searchState.sortBy, 
+                                                    searchState.sortOrder,
+                                                    searchState.pagination.page - 1
+                                                )}
+                                            >
+                                                <i data-lucide="chevron-left"></i>
+                                                Previous
+                                            </button>
+                                            
+                                            <span className="pagination-info">
+                                                Page {searchState.pagination.page} of {searchState.pagination.pages}
+                                            </span>
+                                            
+                                            <button 
+                                                className="btn btn-outline"
+                                                disabled={!searchState.pagination.has_next}
+                                                onClick={() => performSearch(
+                                                    searchState.query, 
+                                                    searchState.filters, 
+                                                    searchState.sortBy, 
+                                                    searchState.sortOrder,
+                                                    searchState.pagination.page + 1
+                                                )}
+                                            >
+                                                Next
+                                                <i data-lucide="chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             );
         }
 
+        // Search Result Item Component
+        function SearchResultItem({ asset, query }) {
+            const getStatusColor = (status) => {
+                const colors = {
+                    'Approved': '#10b981',
+                    'Pending': '#f59e0b',
+                    'Rejected': '#ef4444'
+                };
+                return colors[status] || '#6b7280';
+            };
+
+            const renderHighlightedText = (text, field) => {
+                if (!text || !asset.search_highlights || !asset.search_highlights[field]) {
+                    return text;
+                }
+                
+                return <span dangerouslySetInnerHTML={{ __html: asset.search_highlights[field] }} />;
+            };
+
+            return (
+                <div className="search-result-item">
+                    <div className="result-header">
+                        <h3 className="result-title">
+                            {renderHighlightedText(asset.asset_name, 'asset_name') || asset.asset_name}
+                        </h3>
+                        <div className="result-badges">
+                            <span 
+                                className="status-badge"
+                                style={{ backgroundColor: getStatusColor(asset.approval_status) }}
+                            >
+                                {asset.approval_status}
+                            </span>
+                            {asset.search_score && (
+                                <span className="relevance-score">
+                                    {Math.round(asset.search_score)}% match
+                                </span>
+                            )}
+                        </div>
+                    </div>
+                    
+                    <div className="result-content">
+                        <p className="result-description">
+                            {renderHighlightedText(asset.description, 'description') || asset.description || 'No description available'}
+                        </p>
+                        
+                        <div className="result-meta">
+                            <div className="meta-item">
+                                <i data-lucide="folder"></i>
+                                <span>{asset.category?.category_name || 'Uncategorized'}</span>
+                            </div>
+                            <div className="meta-item">
+                                <i data-lucide="user"></i>
+                                <span>{asset.owner?.display_name || 'Unknown'}</span>
+                            </div>
+                            <div className="meta-item">
+                                <i data-lucide="calendar"></i>
+                                <span>{new Date(asset.created_at).toLocaleDateString()}</span>
+                            </div>
+                            {asset.source_system && (
+                                <div className="meta-item">
+                                    <i data-lucide="server"></i>
+                                    <span>{renderHighlightedText(asset.source_system, 'source_system') || asset.source_system}</span>
+                                </div>
+                            )}
+                        </div>
+                        
+                        {asset.tags && asset.tags.length > 0 && (
+                            <div className="result-tags">
+                                {asset.tags.slice(0, 5).map((tag, idx) => (
+                                    <span key={idx} className="tag">
+                                        {asset.search_highlights && asset.search_highlights.tags && asset.search_highlights.tags[idx] ? 
+                                            <span dangerouslySetInnerHTML={{ __html: asset.search_highlights.tags[idx] }} /> : 
+                                            tag
+                                        }
+                                    </span>
+                                ))}
+                                {asset.tags.length > 5 && (
+                                    <span className="tag-more">+{asset.tags.length - 5}</span>
+                                )}
+                            </div>
+                        )}
+                        
+                        {asset.compliance_summary && (
+                            <div className="result-compliance">
+                                <span className="compliance-label">Compliance:</span>
+                                <span 
+                                    className="compliance-status"
+                                    style={{ color: getStatusColor(asset.compliance_summary.overall_status) }}
+                                >
+                                    {asset.compliance_summary.overall_status}
+                                </span>
+                                {asset.compliance_summary.risk_score && (
+                                    <span className="risk-score">
+                                        Risk: {asset.compliance_summary.risk_score}/100
+                                    </span>
+                                )}
+                            </div>
+                        )}
+                    </div>
+                    
+                    <div className="result-actions">
+                        <button className="btn btn-outline">
+                            <i data-lucide="eye"></i>
+                            View Details
+                        </button>
+                        <button className="btn btn-outline">
+                            <i data-lucide="heart"></i>
+                            Add to Favorites
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+
+        // Utility function for debouncing
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Data Lineage Visualization View
+        function LineageView({ user }) {
+            const [lineageState, setLineageState] = useState({
+                selectedAsset: null,
+                lineageData: null,
+                overview: null,
+                loading: false,
+                error: null,
+                viewMode: 'overview', // 'overview', 'asset', 'graph'
+                filters: {
+                    maxDepth: 3,
+                    includeExternal: true,
+                    direction: 'both' // upstream, downstream, both
+                }
+            });
+
+            const [assets, setAssets] = useState([]);
+            const [svgRef, setSvgRef] = useState(null);
+
+            useEffect(() => {
+                loadOverview();
+                loadAssetsList();
+            }, []);
+
+            useEffect(() => {
+                if (lineageState.lineageData && svgRef) {
+                    renderLineageGraph(lineageState.lineageData, svgRef);
+                }
+            }, [lineageState.lineageData, svgRef]);
+
+            const loadOverview = async () => {
+                try {
+                    setLineageState(prev => ({ ...prev, loading: true, error: null }));
+                    const response = await api.get('/lineage/overview');
+                    setLineageState(prev => ({
+                        ...prev,
+                        overview: response.overview,
+                        loading: false
+                    }));
+                } catch (error) {
+                    setLineageState(prev => ({
+                        ...prev,
+                        loading: false,
+                        error: 'Failed to load lineage overview'
+                    }));
+                }
+            };
+
+            const loadAssetsList = async () => {
+                try {
+                    const response = await api.get('/assets?per_page=100');
+                    setAssets(response.assets || []);
+                } catch (error) {
+                    console.error('Failed to load assets list:', error);
+                }
+            };
+
+            const loadAssetLineage = async (assetId) => {
+                try {
+                    setLineageState(prev => ({ 
+                        ...prev, 
+                        loading: true, 
+                        error: null,
+                        selectedAsset: assetId,
+                        viewMode: 'asset'
+                    }));
+
+                    const params = new URLSearchParams();
+                    params.append('max_depth', lineageState.filters.maxDepth);
+                    params.append('include_external', lineageState.filters.includeExternal);
+                    params.append('direction', lineageState.filters.direction);
+
+                    const response = await api.get(`/lineage/asset/${assetId}?${params}`);
+                    
+                    setLineageState(prev => ({
+                        ...prev,
+                        lineageData: response.lineage,
+                        loading: false
+                    }));
+                } catch (error) {
+                    setLineageState(prev => ({
+                        ...prev,
+                        loading: false,
+                        error: 'Failed to load asset lineage'
+                    }));
+                }
+            };
+
+            const handleFilterChange = (filterName, value) => {
+                const newFilters = {
+                    ...lineageState.filters,
+                    [filterName]: value
+                };
+                
+                setLineageState(prev => ({
+                    ...prev,
+                    filters: newFilters
+                }));
+
+                // Reload lineage if asset is selected
+                if (lineageState.selectedAsset) {
+                    loadAssetLineage(lineageState.selectedAsset);
+                }
+            };
+
+            const renderLineageGraph = (lineageData, svgElement) => {
+                // Clear previous content
+                d3.select(svgElement).selectAll("*").remove();
+
+                const width = 1200;
+                const height = 800;
+                const svg = d3.select(svgElement)
+                    .attr('width', width)
+                    .attr('height', height);
+
+                // Create container for zoom/pan
+                const container = svg.append('g');
+
+                // Add zoom behavior
+                const zoom = d3.zoom()
+                    .scaleExtent([0.1, 4])
+                    .on('zoom', (event) => {
+                        container.attr('transform', event.transform);
+                    });
+
+                svg.call(zoom);
+
+                // Convert nodes object to array
+                const nodes = Object.values(lineageData.nodes);
+                const edges = lineageData.edges;
+
+                // Create force simulation
+                const simulation = d3.forceSimulation(nodes)
+                    .force('link', d3.forceLink(edges)
+                        .id(d => d.id)
+                        .distance(150)
+                        .strength(0.5))
+                    .force('charge', d3.forceManyBody().strength(-800))
+                    .force('center', d3.forceCenter(width / 2, height / 2))
+                    .force('collision', d3.forceCollide().radius(60));
+
+                // Create arrow markers for directed edges
+                const defs = svg.append('defs');
+                
+                defs.append('marker')
+                    .attr('id', 'arrowhead')
+                    .attr('viewBox', '-10 -5 10 10')
+                    .attr('refX', 15)
+                    .attr('refY', 0)
+                    .attr('markerWidth', 6)
+                    .attr('markerHeight', 6)
+                    .attr('orient', 'auto')
+                    .append('path')
+                    .attr('d', 'M -10,-5 L 0,0 L -10,5')
+                    .attr('fill', '#6b7280');
+
+                // Create edges
+                const link = container.append('g')
+                    .attr('class', 'edges')
+                    .selectAll('line')
+                    .data(edges)
+                    .enter().append('line')
+                    .attr('stroke', d => d.is_external ? '#f59e0b' : '#6b7280')
+                    .attr('stroke-width', d => d.is_automated ? 1 : 2)
+                    .attr('stroke-dasharray', d => d.is_automated ? '5,5' : null)
+                    .attr('marker-end', 'url(#arrowhead)');
+
+                // Create nodes
+                const node = container.append('g')
+                    .attr('class', 'nodes')
+                    .selectAll('g')
+                    .data(nodes)
+                    .enter().append('g')
+                    .attr('class', 'node')
+                    .call(d3.drag()
+                        .on('start', (event, d) => {
+                            if (!event.active) simulation.alphaTarget(0.3).restart();
+                            d.fx = d.x;
+                            d.fy = d.y;
+                        })
+                        .on('drag', (event, d) => {
+                            d.fx = event.x;
+                            d.fy = event.y;
+                        })
+                        .on('end', (event, d) => {
+                            if (!event.active) simulation.alphaTarget(0);
+                            d.fx = null;
+                            d.fy = null;
+                        }));
+
+                // Add circles for nodes
+                node.append('circle')
+                    .attr('r', d => d.is_root ? 35 : (d.type === 'external' ? 25 : 30))
+                    .attr('fill', d => {
+                        if (d.is_root) return '#4f46e5';
+                        if (d.type === 'external') return '#f59e0b';
+                        return d.category_color || '#6b7280';
+                    })
+                    .attr('stroke', d => d.is_root ? '#312e81' : '#ffffff')
+                    .attr('stroke-width', 3);
+
+                // Add labels
+                node.append('text')
+                    .text(d => d.name.length > 15 ? d.name.substring(0, 15) + '...' : d.name)
+                    .attr('text-anchor', 'middle')
+                    .attr('dy', 5)
+                    .attr('font-size', '12px')
+                    .attr('font-weight', d => d.is_root ? 'bold' : 'normal')
+                    .attr('fill', 'white');
+
+                // Add tooltips
+                node.append('title')
+                    .text(d => `${d.name}\n${d.description || ''}\nType: ${d.type}\nDepth: ${d.depth}`);
+
+                // Update positions on simulation tick
+                simulation.on('tick', () => {
+                    link
+                        .attr('x1', d => d.source.x)
+                        .attr('y1', d => d.source.y)
+                        .attr('x2', d => d.target.x)
+                        .attr('y2', d => d.target.y);
+
+                    node
+                        .attr('transform', d => `translate(${d.x},${d.y})`);
+                });
+
+                // Add legend
+                const legend = svg.append('g')
+                    .attr('class', 'legend')
+                    .attr('transform', 'translate(20, 20)');
+
+                const legendData = [
+                    { label: 'Root Asset', color: '#4f46e5', type: 'circle' },
+                    { label: 'Internal Asset', color: '#6b7280', type: 'circle' },
+                    { label: 'External System', color: '#f59e0b', type: 'circle' },
+                    { label: 'Manual Relationship', color: '#6b7280', type: 'line' },
+                    { label: 'Automated Relationship', color: '#6b7280', type: 'dashed-line' }
+                ];
+
+                const legendItems = legend.selectAll('.legend-item')
+                    .data(legendData)
+                    .enter().append('g')
+                    .attr('class', 'legend-item')
+                    .attr('transform', (d, i) => `translate(0, ${i * 25})`);
+
+                legendItems.each(function(d) {
+                    const item = d3.select(this);
+                    
+                    if (d.type === 'circle') {
+                        item.append('circle')
+                            .attr('r', 8)
+                            .attr('fill', d.color)
+                            .attr('cx', 8)
+                            .attr('cy', 0);
+                    } else if (d.type === 'line') {
+                        item.append('line')
+                            .attr('x1', 0)
+                            .attr('y1', 0)
+                            .attr('x2', 16)
+                            .attr('y2', 0)
+                            .attr('stroke', d.color)
+                            .attr('stroke-width', 2);
+                    } else if (d.type === 'dashed-line') {
+                        item.append('line')
+                            .attr('x1', 0)
+                            .attr('y1', 0)
+                            .attr('x2', 16)
+                            .attr('y2', 0)
+                            .attr('stroke', d.color)
+                            .attr('stroke-width', 2)
+                            .attr('stroke-dasharray', '5,5');
+                    }
+                    
+                    item.append('text')
+                        .text(d.label)
+                        .attr('x', 25)
+                        .attr('y', 5)
+                        .attr('font-size', '12px')
+                        .attr('fill', '#374151');
+                });
+            };
+
+            return (
+                <div className="fade-in">
+                    <div className="page-header">
+                        <h1 className="page-title">Data Lineage</h1>
+                        <p className="page-subtitle">
+                            Visualize data flow and relationships across your organization
+                        </p>
+                    </div>
+
+                    {/* View Mode Selector */}
+                    <div className="lineage-controls">
+                        <div className="view-mode-selector">
+                            <button 
+                                className={`btn ${lineageState.viewMode === 'overview' ? 'btn-primary' : 'btn-outline'}`}
+                                onClick={() => setLineageState(prev => ({ ...prev, viewMode: 'overview' }))}
+                            >
+                                <i data-lucide="bar-chart-3"></i>
+                                Overview
+                            </button>
+                            <button 
+                                className={`btn ${lineageState.viewMode === 'asset' ? 'btn-primary' : 'btn-outline'}`}
+                                onClick={() => setLineageState(prev => ({ ...prev, viewMode: 'asset' }))}
+                            >
+                                <i data-lucide="git-branch"></i>
+                                Asset Lineage
+                            </button>
+                        </div>
+
+                        {lineageState.viewMode === 'asset' && (
+                            <div className="lineage-filters">
+                                <select 
+                                    className="filter-select"
+                                    value={lineageState.selectedAsset || ''}
+                                    onChange={(e) => e.target.value && loadAssetLineage(parseInt(e.target.value))}
+                                >
+                                    <option value="">Select an asset...</option>
+                                    {assets.map(asset => (
+                                        <option key={asset.asset_id} value={asset.asset_id}>
+                                            {asset.asset_name}
+                                        </option>
+                                    ))}
+                                </select>
+
+                                <select 
+                                    className="filter-select"
+                                    value={lineageState.filters.direction}
+                                    onChange={(e) => handleFilterChange('direction', e.target.value)}
+                                >
+                                    <option value="both">Both Directions</option>
+                                    <option value="upstream">Upstream Only</option>
+                                    <option value="downstream">Downstream Only</option>
+                                </select>
+
+                                <select 
+                                    className="filter-select"
+                                    value={lineageState.filters.maxDepth}
+                                    onChange={(e) => handleFilterChange('maxDepth', parseInt(e.target.value))}
+                                >
+                                    <option value={1}>1 Level</option>
+                                    <option value={2}>2 Levels</option>
+                                    <option value={3}>3 Levels</option>
+                                    <option value={4}>4 Levels</option>
+                                    <option value={5}>5 Levels</option>
+                                </select>
+
+                                <label className="filter-checkbox">
+                                    <input
+                                        type="checkbox"
+                                        checked={lineageState.filters.includeExternal}
+                                        onChange={(e) => handleFilterChange('includeExternal', e.target.checked)}
+                                    />
+                                    <span className="checkmark"></span>
+                                    <span className="filter-label">Include External Systems</span>
+                                </label>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Content based on view mode */}
+                    {lineageState.viewMode === 'overview' && lineageState.overview && (
+                        <div className="lineage-overview">
+                            <div className="stats-grid">
+                                <div className="stat-card">
+                                    <div className="stat-icon">
+                                        <i data-lucide="database"></i>
+                                    </div>
+                                    <div className="stat-content">
+                                        <div className="stat-number">{lineageState.overview.total_assets}</div>
+                                        <div className="stat-label">Total Assets</div>
+                                    </div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <div className="stat-icon">
+                                        <i data-lucide="git-branch"></i>
+                                    </div>
+                                    <div className="stat-content">
+                                        <div className="stat-number">{lineageState.overview.total_relationships}</div>
+                                        <div className="stat-label">Relationships</div>
+                                    </div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <div className="stat-icon">
+                                        <i data-lucide="external-link"></i>
+                                    </div>
+                                    <div className="stat-content">
+                                        <div className="stat-number">{lineageState.overview.external_relationships}</div>
+                                        <div className="stat-label">External Connections</div>
+                                    </div>
+                                </div>
+
+                                <div className="stat-card">
+                                    <div className="stat-icon">
+                                        <i data-lucide="activity"></i>
+                                    </div>
+                                    <div className="stat-content">
+                                        <div className="stat-number">{lineageState.overview.depth_statistics.connectivity_percentage}%</div>
+                                        <div className="stat-label">Connected Assets</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Top Connected Assets */}
+                            <div className="overview-sections">
+                                <div className="overview-section">
+                                    <h3>Most Connected Assets</h3>
+                                    <div className="connected-assets-list">
+                                        {lineageState.overview.top_connected_assets.map(asset => (
+                                            <div key={asset.asset_id} className="connected-asset-item">
+                                                <div className="asset-info">
+                                                    <span className="asset-name">{asset.asset_name}</span>
+                                                    <span className="relationship-count">{asset.relationship_count} connections</span>
+                                                </div>
+                                                <button 
+                                                    className="btn btn-outline btn-sm"
+                                                    onClick={() => loadAssetLineage(asset.asset_id)}
+                                                >
+                                                    View Lineage
+                                                </button>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="overview-section">
+                                    <h3>External Systems</h3>
+                                    <div className="external-systems-list">
+                                        {Object.entries(lineageState.overview.external_systems).map(([system, count]) => (
+                                            <div key={system} className="external-system-item">
+                                                <div className="system-info">
+                                                    <i data-lucide="server"></i>
+                                                    <span className="system-name">{system}</span>
+                                                </div>
+                                                <span className="connection-count">{count} connections</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="overview-section">
+                                    <h3>Relationship Types</h3>
+                                    <div className="relationship-types-list">
+                                        {Object.entries(lineageState.overview.relationship_types).map(([type, count]) => (
+                                            <div key={type} className="relationship-type-item">
+                                                <span className="type-name">{type.replace('_', ' ')}</span>
+                                                <span className="type-count">{count}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Asset Lineage Visualization */}
+                    {lineageState.viewMode === 'asset' && (
+                        <div className="lineage-visualization">
+                            {lineageState.loading && (
+                                <div className="loading">
+                                    <div className="spinner"></div>
+                                    Loading lineage data...
+                                </div>
+                            )}
+
+                            {lineageState.error && (
+                                <div className="error-message">
+                                    <i data-lucide="alert-circle"></i>
+                                    {lineageState.error}
+                                </div>
+                            )}
+
+                            {!lineageState.loading && !lineageState.error && !lineageState.selectedAsset && (
+                                <div className="no-selection">
+                                    <i data-lucide="git-branch" style={{ width: '64px', height: '64px', color: '#6b7280' }}></i>
+                                    <h3>Select an Asset</h3>
+                                    <p>Choose an asset from the dropdown above to visualize its data lineage</p>
+                                </div>
+                            )}
+
+                            {!lineageState.loading && lineageState.lineageData && (
+                                <div className="lineage-graph-container">
+                                    <div className="lineage-stats">
+                                        <span>Nodes: {lineageState.lineageData.stats.total_nodes}</span>
+                                        <span>Relationships: {lineageState.lineageData.stats.total_edges}</span>
+                                        <span>External Systems: {lineageState.lineageData.stats.external_nodes}</span>
+                                    </div>
+                                    <svg 
+                                        ref={setSvgRef}
+                                        className="lineage-graph"
+                                    ></svg>
+                                </div>
+                            )}
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        // Enhanced Assets View with Detailed Asset Display
         function AssetsView({ user }) {
+            const [assets, setAssets] = useState([]);
+            const [selectedAsset, setSelectedAsset] = useState(null);
+            const [loading, setLoading] = useState(true);
+            const [view, setView] = useState('list'); // 'list' or 'detail'
+            const [filters, setFilters] = useState({
+                status: 'Approved',
+                category: '',
+                search: ''
+            });
+
+            useEffect(() => {
+                loadAssets();
+            }, [filters]);
+
+            const loadAssets = async () => {
+                try {
+                    setLoading(true);
+                    const params = new URLSearchParams();
+                    if (filters.status) params.append('status', filters.status);
+                    if (filters.category) params.append('category_id', filters.category);
+                    if (filters.search) params.append('search', filters.search);
+                    
+                    const response = await api.get(`/assets?${params}`);
+                    setAssets(response.assets || []);
+                } catch (err) {
+                    console.error('Failed to load assets:', err);
+                } finally {
+                    setLoading(false);
+                }
+            };
+
+            const loadAssetDetail = async (assetId) => {
+                try {
+                    const response = await api.get(`/assets/${assetId}`);
+                    setSelectedAsset(response);
+                    setView('detail');
+                } catch (err) {
+                    console.error('Failed to load asset detail:', err);
+                }
+            };
+
+            const getStatusColor = (status) => {
+                const colors = {
+                    'Approved': '#10b981',
+                    'Pending': '#f59e0b',
+                    'Rejected': '#ef4444',
+                    'Compliant': '#10b981',
+                    'Non-Compliant': '#ef4444',
+                    'Not Assessed': '#6b7280'
+                };
+                return colors[status] || '#6b7280';
+            };
+
+            const getRiskColor = (score) => {
+                if (score >= 80) return '#ef4444'; // High risk - red
+                if (score >= 60) return '#f59e0b'; // Medium risk - orange
+                if (score >= 40) return '#eab308'; // Low-medium risk - yellow
+                return '#10b981'; // Low risk - green
+            };
+
+            if (view === 'detail' && selectedAsset) {
+                return <AssetDetailView 
+                    assetData={selectedAsset} 
+                    onBack={() => setView('list')} 
+                    user={user}
+                    onUpdate={loadAssets}
+                />;
+            }
+
             return (
                 <div className="fade-in">
                     <div className="page-header">
@@ -927,9 +4284,1013 @@
                             Manage your organization's data assets
                         </p>
                     </div>
-                    <div className="card">
-                        <p>Data assets management coming soon...</p>
+
+                    {/* Filters */}
+                    <div className="filters-container">
+                        <div className="search-input-container">
+                            <i data-lucide="search" className="search-icon"></i>
+                            <input
+                                type="text"
+                                placeholder="Search assets..."
+                                className="search-input"
+                                value={filters.search}
+                                onChange={(e) => setFilters({...filters, search: e.target.value})}
+                            />
+                        </div>
+                        
+                        <select 
+                            className="filter-select"
+                            value={filters.status}
+                            onChange={(e) => setFilters({...filters, status: e.target.value})}
+                        >
+                            <option value="">All Status</option>
+                            <option value="Approved">Approved</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+
+                        <button className="btn btn-primary">
+                            <i data-lucide="plus"></i>
+                            New Asset
+                        </button>
                     </div>
+
+                    {loading ? (
+                        <div className="loading">
+                            <div className="spinner"></div>
+                            Loading assets...
+                        </div>
+                    ) : (
+                        <div className="assets-grid">
+                            {assets.map(asset => (
+                                <div key={asset.asset_id} className="asset-card" onClick={() => loadAssetDetail(asset.asset_id)}>
+                                    <div className="asset-header">
+                                        <h3 className="asset-title">{asset.asset_name}</h3>
+                                        <span 
+                                            className="status-badge"
+                                            style={{ backgroundColor: getStatusColor(asset.approval_status) }}
+                                        >
+                                            {asset.approval_status}
+                                        </span>
+                                    </div>
+                                    
+                                    <p className="asset-description">
+                                        {asset.description?.substring(0, 120) || 'No description available'}
+                                        {asset.description?.length > 120 ? '...' : ''}
+                                    </p>
+
+                                    <div className="asset-meta">
+                                        <div className="meta-item">
+                                            <i data-lucide="folder"></i>
+                                            <span>{asset.category?.category_name || 'Uncategorized'}</span>
+                                        </div>
+                                        <div className="meta-item">
+                                            <i data-lucide="user"></i>
+                                            <span>{asset.owner?.display_name || 'Unknown'}</span>
+                                        </div>
+                                        <div className="meta-item">
+                                            <i data-lucide="calendar"></i>
+                                            <span>{new Date(asset.created_at).toLocaleDateString()}</span>
+                                        </div>
+                                    </div>
+
+                                    {asset.compliance_metrics && (
+                                        <div className="compliance-summary">
+                                            <div className="compliance-item">
+                                                <span className="compliance-label">Compliance:</span>
+                                                <span 
+                                                    className="compliance-value"
+                                                    style={{ color: getStatusColor(asset.compliance_metrics.overall_status) }}
+                                                >
+                                                    {asset.compliance_metrics.overall_status}
+                                                </span>
+                                            </div>
+                                            <div className="compliance-item">
+                                                <span className="compliance-label">Risk Score:</span>
+                                                <span 
+                                                    className="risk-score"
+                                                    style={{ color: getRiskColor(asset.compliance_metrics.risk_score) }}
+                                                >
+                                                    {asset.compliance_metrics.risk_score}/100
+                                                </span>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {asset.tags && asset.tags.length > 0 && (
+                                        <div className="asset-tags">
+                                            {asset.tags.slice(0, 3).map((tag, idx) => (
+                                                <span key={idx} className="tag">{tag}</span>
+                                            ))}
+                                            {asset.tags.length > 3 && (
+                                                <span className="tag-more">+{asset.tags.length - 3}</span>
+                                            )}
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
+                    {!loading && assets.length === 0 && (
+                        <div className="empty-state">
+                            <i data-lucide="database" className="empty-icon"></i>
+                            <h3>No Assets Found</h3>
+                            <p>No data assets match your current filters.</p>
+                            <button className="btn btn-primary">
+                                <i data-lucide="plus"></i>
+                                Create First Asset
+                            </button>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        // Detailed Asset View Component
+        function AssetDetailView({ assetData, onBack, user, onUpdate }) {
+            const [activeTab, setActiveTab] = useState('overview');
+            const [assetFields, setAssetFields] = useState([]);
+            const [fieldsLoading, setFieldsLoading] = useState(false);
+            const { asset, compliance, glossary_terms, lineage, related_assets, approval_history } = assetData;
+
+            useEffect(() => {
+                if (activeTab === 'fields') {
+                    loadAssetFields();
+                }
+            }, [activeTab, asset.asset_id]);
+
+            const loadAssetFields = async () => {
+                try {
+                    setFieldsLoading(true);
+                    const response = await api.get(`/fields/assets/${asset.asset_id}/fields?include_compliance=true`);
+                    setAssetFields(response.fields || []);
+                } catch (err) {
+                    console.error('Failed to load asset fields:', err);
+                    setAssetFields([]);
+                } finally {
+                    setFieldsLoading(false);
+                }
+            };
+
+            const getStatusColor = (status) => {
+                const colors = {
+                    'Approved': '#10b981',
+                    'Pending': '#f59e0b', 
+                    'Rejected': '#ef4444',
+                    'Compliant': '#10b981',
+                    'Non-Compliant': '#ef4444',
+                    'Not Assessed': '#6b7280'
+                };
+                return colors[status] || '#6b7280';
+            };
+
+            const getRiskColor = (score) => {
+                if (score >= 80) return '#ef4444';
+                if (score >= 60) return '#f59e0b';
+                if (score >= 40) return '#eab308';
+                return '#10b981';
+            };
+
+            return (
+                <div className="fade-in">
+                    {/* Asset Header */}
+                    <div className="asset-detail-header">
+                        <button className="back-button" onClick={onBack}>
+                            <i data-lucide="arrow-left"></i>
+                            Back to Assets
+                        </button>
+                        
+                        <div className="asset-title-section">
+                            <h1 className="asset-detail-title">{asset.asset_name}</h1>
+                            <div className="asset-badges">
+                                <span 
+                                    className="status-badge large"
+                                    style={{ backgroundColor: getStatusColor(asset.approval_status) }}
+                                >
+                                    {asset.approval_status}
+                                </span>
+                                {asset.compliance_metrics && (
+                                    <span 
+                                        className="status-badge large"
+                                        style={{ backgroundColor: getStatusColor(asset.compliance_metrics.overall_status) }}
+                                    >
+                                        {asset.compliance_metrics.overall_status}
+                                    </span>
+                                )}
+                                {asset.is_sensitive && (
+                                    <span className="status-badge large sensitive">
+                                        <i data-lucide="shield-alert"></i>
+                                        Sensitive
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+
+                        <div className="asset-actions">
+                            <button className="btn btn-secondary">
+                                <i data-lucide="edit"></i>
+                                Edit
+                            </button>
+                            <button className="btn btn-secondary">
+                                <i data-lucide="download"></i>
+                                Export
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Key Metrics */}
+                    {asset.compliance_metrics && (
+                        <div className="metrics-summary">
+                            <div className="metric-card">
+                                <div className="metric-value" style={{ color: getRiskColor(asset.compliance_metrics.risk_score) }}>
+                                    {asset.compliance_metrics.risk_score}/100
+                                </div>
+                                <div className="metric-label">Risk Score</div>
+                            </div>
+                            <div className="metric-card">
+                                <div className="metric-value">{asset.compliance_metrics.compliant_count}/{asset.compliance_metrics.total_requirements}</div>
+                                <div className="metric-label">Compliance Requirements</div>
+                            </div>
+                            <div className="metric-card">
+                                <div className="metric-value" style={{ color: asset.compliance_metrics.overdue_count > 0 ? '#ef4444' : '#10b981' }}>
+                                    {asset.compliance_metrics.overdue_count}
+                                </div>
+                                <div className="metric-label">Overdue Reviews</div>
+                            </div>
+                            <div className="metric-card">
+                                <div className="metric-value">{asset.data_quality_score ? (asset.data_quality_score * 100).toFixed(0) + '%' : 'N/A'}</div>
+                                <div className="metric-label">Quality Score</div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Tab Navigation */}
+                    <div className="detail-tabs">
+                        <button 
+                            className={`tab-btn ${activeTab === 'overview' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('overview')}
+                        >
+                            <i data-lucide="info"></i>
+                            Overview
+                        </button>
+                        {compliance && compliance.length > 0 && (
+                            <button 
+                                className={`tab-btn ${activeTab === 'compliance' ? 'active' : ''}`}
+                                onClick={() => setActiveTab('compliance')}
+                            >
+                                <i data-lucide="shield-check"></i>
+                                Compliance ({compliance.length})
+                            </button>
+                        )}
+                        {lineage && (lineage.upstream.length > 0 || lineage.downstream.length > 0) && (
+                            <button 
+                                className={`tab-btn ${activeTab === 'lineage' ? 'active' : ''}`}
+                                onClick={() => setActiveTab('lineage')}
+                            >
+                                <i data-lucide="git-branch"></i>
+                                Data Lineage
+                            </button>
+                        )}
+                        <button 
+                            className={`tab-btn ${activeTab === 'fields' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('fields')}
+                        >
+                            <i data-lucide="columns"></i>
+                            Data Fields
+                        </button>
+                        {glossary_terms && glossary_terms.length > 0 && (
+                            <button 
+                                className={`tab-btn ${activeTab === 'glossary' ? 'active' : ''}`}
+                                onClick={() => setActiveTab('glossary')}
+                            >
+                                <i data-lucide="book-open"></i>
+                                Business Terms ({glossary_terms.length})
+                            </button>
+                        )}
+                        <button 
+                            className={`tab-btn ${activeTab === 'history' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('history')}
+                        >
+                            <i data-lucide="clock"></i>
+                            History
+                        </button>
+                    </div>
+
+                    {/* Tab Content */}
+                    <div className="tab-content">
+                        {activeTab === 'overview' && (
+                            <AssetOverviewTab asset={asset} relatedAssets={related_assets} />
+                        )}
+                        {activeTab === 'compliance' && (
+                            <AssetComplianceTab compliance={compliance} />
+                        )}
+                        {activeTab === 'fields' && (
+                            <AssetFieldsTab 
+                                fields={assetFields} 
+                                loading={fieldsLoading}
+                                assetId={asset.asset_id}
+                                onRefresh={loadAssetFields}
+                            />
+                        )}
+                        {activeTab === 'lineage' && (
+                            <AssetLineageTab lineage={lineage} />
+                        )}
+                        {activeTab === 'glossary' && (
+                            <AssetGlossaryTab terms={glossary_terms} />
+                        )}
+                        {activeTab === 'history' && (
+                            <AssetHistoryTab history={approval_history} />
+                        )}
+                    </div>
+                </div>
+            );
+        }
+
+        // Asset Detail Tab Components
+        function AssetOverviewTab({ asset, relatedAssets }) {
+            return (
+                <div className="overview-content">
+                    <div className="overview-grid">
+                        <div className="asset-info-card">
+                            <h3>Asset Information</h3>
+                            <div className="info-grid">
+                                <div className="info-item">
+                                    <span className="info-label">Description:</span>
+                                    <span className="info-value">{asset.description || 'No description provided'}</span>
+                                </div>
+                                <div className="info-item">
+                                    <span className="info-label">Source System:</span>
+                                    <span className="info-value">{asset.source_system || 'Unknown'}</span>
+                                </div>
+                                <div className="info-item">
+                                    <span className="info-label">Source Location:</span>
+                                    <span className="info-value">{asset.source_location || 'Not specified'}</span>
+                                </div>
+                                <div className="info-item">
+                                    <span className="info-label">Category:</span>
+                                    <span className="info-value">{asset.category?.category_name || 'Uncategorized'}</span>
+                                </div>
+                                <div className="info-item">
+                                    <span className="info-label">Report Type:</span>
+                                    <span className="info-value">{asset.report_type?.type_name || 'None'}</span>
+                                </div>
+                                <div className="info-item">
+                                    <span className="info-label">Access Level:</span>
+                                    <span className="info-value access-level">{asset.access_level}</span>
+                                </div>
+                                <div className="info-item">
+                                    <span className="info-label">Owner:</span>
+                                    <span className="info-value">{asset.owner?.display_name || 'Unassigned'}</span>
+                                </div>
+                                <div className="info-item">
+                                    <span className="info-label">Created:</span>
+                                    <span className="info-value">{new Date(asset.created_at).toLocaleDateString()}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="asset-metadata-card">
+                            <h3>Metadata</h3>
+                            {asset.metadata && Object.keys(asset.metadata).length > 0 ? (
+                                <div className="metadata-grid">
+                                    {Object.entries(asset.metadata).map(([key, value]) => (
+                                        <div key={key} className="metadata-item">
+                                            <span className="metadata-key">{key}:</span>
+                                            <span className="metadata-value">{JSON.stringify(value)}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            ) : (
+                                <p className="no-metadata">No custom metadata available</p>
+                            )}
+                        </div>
+                    </div>
+
+                    {asset.schema_info && (
+                        <div className="schema-card">
+                            <h3>Schema Information</h3>
+                            <div className="schema-content">
+                                {typeof asset.schema_info === 'object' ? (
+                                    <pre className="schema-json">{JSON.stringify(asset.schema_info, null, 2)}</pre>
+                                ) : (
+                                    <p>{asset.schema_info}</p>
+                                )}
+                            </div>
+                        </div>
+                    )}
+
+                    {asset.tags && asset.tags.length > 0 && (
+                        <div className="tags-card">
+                            <h3>Tags</h3>
+                            <div className="tags-container">
+                                {asset.tags.map((tag, idx) => (
+                                    <span key={idx} className="tag large">{tag}</span>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {relatedAssets && relatedAssets.length > 0 && (
+                        <div className="related-assets-card">
+                            <h3>Related Assets</h3>
+                            <div className="related-assets-grid">
+                                {relatedAssets.map(relatedAsset => (
+                                    <div key={relatedAsset.asset_id} className="related-asset-item">
+                                        <h4>{relatedAsset.asset_name}</h4>
+                                        <p>{relatedAsset.description?.substring(0, 80)}...</p>
+                                        <span className="related-category">{relatedAsset.category?.category_name}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        function AssetComplianceTab({ compliance }) {
+            const getStatusColor = (status) => {
+                const colors = {
+                    'Compliant': '#10b981',
+                    'Non-Compliant': '#ef4444',
+                    'Pending': '#f59e0b',
+                    'Not Applicable': '#6b7280'
+                };
+                return colors[status] || '#6b7280';
+            };
+
+            const getRiskColor = (level) => {
+                const colors = {
+                    'Critical': '#ef4444',
+                    'High': '#f59e0b',
+                    'Medium': '#eab308',
+                    'Low': '#10b981'
+                };
+                return colors[level] || '#6b7280';
+            };
+
+            return (
+                <div className="compliance-content">
+                    <div className="compliance-grid">
+                        {compliance.map((item, idx) => (
+                            <div key={idx} className="compliance-card">
+                                <div className="compliance-header">
+                                    <h4>{item.requirement_details.requirement_name}</h4>
+                                    <div className="compliance-badges">
+                                        <span 
+                                            className="status-badge"
+                                            style={{ backgroundColor: getStatusColor(item.compliance_status) }}
+                                        >
+                                            {item.compliance_status}
+                                        </span>
+                                        <span 
+                                            className="risk-badge"
+                                            style={{ backgroundColor: getRiskColor(item.risk_level) }}
+                                        >
+                                            {item.risk_level} Risk
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div className="compliance-info">
+                                    <p className="requirement-description">
+                                        {item.requirement_details.description}
+                                    </p>
+                                    
+                                    <div className="compliance-details">
+                                        <div className="detail-item">
+                                            <span className="detail-label">Regulatory Body:</span>
+                                            <span className="detail-value">{item.requirement_details.regulatory_body}</span>
+                                        </div>
+                                        <div className="detail-item">
+                                            <span className="detail-label">Type:</span>
+                                            <span className="detail-value">{item.requirement_details.requirement_type}</span>
+                                        </div>
+                                        <div className="detail-item">
+                                            <span className="detail-label">Severity:</span>
+                                            <span className="detail-value">{item.requirement_details.severity_level}</span>
+                                        </div>
+                                        {item.assessment_date && (
+                                            <div className="detail-item">
+                                                <span className="detail-label">Last Assessed:</span>
+                                                <span className="detail-value">{new Date(item.assessment_date).toLocaleDateString()}</span>
+                                            </div>
+                                        )}
+                                        {item.next_review_date && (
+                                            <div className="detail-item">
+                                                <span className="detail-label">Next Review:</span>
+                                                <span className={`detail-value ${item.is_overdue ? 'overdue' : ''}`}>
+                                                    {new Date(item.next_review_date).toLocaleDateString()}
+                                                    {item.is_overdue && <span className="overdue-indicator"> (Overdue)</span>}
+                                                </span>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {item.assessment_notes && (
+                                        <div className="assessment-notes">
+                                            <h5>Assessment Notes:</h5>
+                                            <p>{item.assessment_notes}</p>
+                                        </div>
+                                    )}
+
+                                    {item.remediation_plan && (
+                                        <div className="remediation-plan">
+                                            <h5>Remediation Plan:</h5>
+                                            <p>{item.remediation_plan}</p>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {compliance.length === 0 && (
+                        <div className="empty-compliance">
+                            <i data-lucide="shield-off" className="empty-icon"></i>
+                            <h3>No Compliance Requirements</h3>
+                            <p>This asset has no compliance requirements assigned.</p>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        function AssetLineageTab({ lineage }) {
+            return (
+                <div className="lineage-content">
+                    <div className="lineage-section">
+                        <h3>Upstream Data Sources</h3>
+                        {lineage.upstream.length > 0 ? (
+                            <div className="lineage-items">
+                                {lineage.upstream.map((item, idx) => (
+                                    <div key={idx} className="lineage-item upstream">
+                                        <div className="lineage-asset">
+                                            <h4>{item.asset.asset_name}</h4>
+                                            <p>{item.asset.description?.substring(0, 100)}...</p>
+                                            <div className="lineage-meta">
+                                                <span className="relationship-type">{item.relationship.relationship_type}</span>
+                                                <span className="asset-category">{item.asset.category?.category_name}</span>
+                                            </div>
+                                        </div>
+                                        <i data-lucide="arrow-right" className="lineage-arrow"></i>
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            <p className="no-lineage">No upstream data sources identified.</p>
+                        )}
+                    </div>
+
+                    <div className="lineage-section">
+                        <h3>Downstream Consumers</h3>
+                        {lineage.downstream.length > 0 ? (
+                            <div className="lineage-items">
+                                {lineage.downstream.map((item, idx) => (
+                                    <div key={idx} className="lineage-item downstream">
+                                        <i data-lucide="arrow-right" className="lineage-arrow"></i>
+                                        <div className="lineage-asset">
+                                            <h4>{item.asset.asset_name}</h4>
+                                            <p>{item.asset.description?.substring(0, 100)}...</p>
+                                            <div className="lineage-meta">
+                                                <span className="relationship-type">{item.relationship.relationship_type}</span>
+                                                <span className="asset-category">{item.asset.category?.category_name}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            <p className="no-lineage">No downstream consumers identified.</p>
+                        )}
+                    </div>
+
+                    {lineage.upstream.length === 0 && lineage.downstream.length === 0 && (
+                        <div className="empty-lineage">
+                            <i data-lucide="git-branch" className="empty-icon"></i>
+                            <h3>No Data Lineage</h3>
+                            <p>This asset has no documented data lineage relationships.</p>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        function AssetGlossaryTab({ terms }) {
+            return (
+                <div className="glossary-content">
+                    <div className="glossary-terms">
+                        {terms.map((termUsage, idx) => (
+                            <div key={idx} className="glossary-term-card">
+                                <div className="term-header">
+                                    <h4>{termUsage.term_details.term_name}</h4>
+                                    <div className="term-badges">
+                                        {termUsage.verified && (
+                                            <span className="verified-badge">
+                                                <i data-lucide="check-circle"></i>
+                                                Verified
+                                            </span>
+                                        )}
+                                        <span className="confidence-badge">
+                                            {termUsage.confidence_score ? `${(termUsage.confidence_score * 100).toFixed(0)}% Confidence` : 'Manual'}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div className="term-content">
+                                    <p className="term-definition">{termUsage.term_details.definition}</p>
+                                    
+                                    {termUsage.term_details.context && (
+                                        <div className="term-context">
+                                            <strong>Context:</strong> {termUsage.term_details.context}
+                                        </div>
+                                    )}
+
+                                    {termUsage.usage_context && (
+                                        <div className="usage-context">
+                                            <strong>Usage in this Asset:</strong> {termUsage.usage_context}
+                                        </div>
+                                    )}
+
+                                    <div className="term-meta">
+                                        <span className="term-domain">{termUsage.term_details.domain || 'General'}</span>
+                                        <span className="term-type">{termUsage.term_details.term_type}</span>
+                                        <span className="term-status">{termUsage.term_details.status}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {terms.length === 0 && (
+                        <div className="empty-glossary">
+                            <i data-lucide="book-open" className="empty-icon"></i>
+                            <h3>No Business Terms</h3>
+                            <p>No business glossary terms are associated with this asset.</p>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        function AssetFieldsTab({ fields, loading, assetId, onRefresh }) {
+            const [selectedField, setSelectedField] = useState(null);
+            const [showAddField, setShowAddField] = useState(false);
+
+            const getPrivacyIcon = (field) => {
+                const flags = [];
+                if (field.contains_pii) flags.push('PII');
+                if (field.contains_phi) flags.push('PHI');
+                if (field.contains_pci) flags.push('PCI');
+                return flags;
+            };
+
+            const getSensitivityColor = (level) => {
+                const colors = {
+                    'Critical': '#ef4444',
+                    'High': '#f59e0b',
+                    'Medium': '#eab308',
+                    'Low': '#10b981'
+                };
+                return colors[level] || '#6b7280';
+            };
+
+            const getComplianceStatusColor = (status) => {
+                const colors = {
+                    'Compliant': '#10b981',
+                    'Non-Compliant': '#ef4444',
+                    'Pending': '#f59e0b',
+                    'Not Applicable': '#6b7280'
+                };
+                return colors[status] || '#6b7280';
+            };
+
+            if (loading) {
+                return (
+                    <div className="loading">
+                        <div className="spinner"></div>
+                        Loading data fields...
+                    </div>
+                );
+            }
+
+            return (
+                <div className="fields-content">
+                    <div className="fields-header">
+                        <div className="fields-actions">
+                            <button className="btn btn-primary" onClick={() => setShowAddField(true)}>
+                                <i data-lucide="plus"></i>
+                                Add Field
+                            </button>
+                            <button className="btn btn-secondary" onClick={onRefresh}>
+                                <i data-lucide="refresh-cw"></i>
+                                Refresh
+                            </button>
+                        </div>
+                    </div>
+
+                    {fields.length > 0 ? (
+                        <div className="fields-grid">
+                            {fields.map(field => (
+                                <div key={field.field_id} className="field-card" onClick={() => setSelectedField(field)}>
+                                    <div className="field-header">
+                                        <h4 className="field-name">{field.field_name}</h4>
+                                        <div className="field-badges">
+                                            <span 
+                                                className="sensitivity-badge"
+                                                style={{ backgroundColor: getSensitivityColor(field.sensitivity_level) }}
+                                            >
+                                                {field.sensitivity_level}
+                                            </span>
+                                            {getPrivacyIcon(field).map(flag => (
+                                                <span key={flag} className="privacy-badge">
+                                                    {flag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div className="field-details">
+                                        <div className="field-type">
+                                            <span className="label">Type:</span>
+                                            <span className="value">{field.data_type || 'Unknown'}</span>
+                                        </div>
+                                        {field.field_description && (
+                                            <div className="field-description">
+                                                {field.field_description.substring(0, 100)}
+                                                {field.field_description.length > 100 ? '...' : ''}
+                                            </div>
+                                        )}
+                                        
+                                        {field.business_name && (
+                                            <div className="business-name">
+                                                <span className="label">Business Name:</span>
+                                                <span className="value">{field.business_name}</span>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {field.compliance_summary && field.compliance_summary.total > 0 && (
+                                        <div className="field-compliance-summary">
+                                            <h5>Compliance Status</h5>
+                                            <div className="compliance-metrics">
+                                                <div className="metric">
+                                                    <span className="metric-label">Total:</span>
+                                                    <span className="metric-value">{field.compliance_summary.total}</span>
+                                                </div>
+                                                <div className="metric">
+                                                    <span className="metric-label">Compliant:</span>
+                                                    <span className="metric-value" style={{ color: '#10b981' }}>
+                                                        {field.compliance_summary.compliant}
+                                                    </span>
+                                                </div>
+                                                <div className="metric">
+                                                    <span className="metric-label">Non-Compliant:</span>
+                                                    <span className="metric-value" style={{ color: '#ef4444' }}>
+                                                        {field.compliance_summary.non_compliant}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    <div className="field-meta">
+                                        {field.is_primary_key && <span className="meta-tag">Primary Key</span>}
+                                        {field.is_foreign_key && <span className="meta-tag">Foreign Key</span>}
+                                        {!field.is_nullable && <span className="meta-tag">Not Null</span>}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="empty-fields">
+                            <i data-lucide="columns" className="empty-icon"></i>
+                            <h3>No Data Fields</h3>
+                            <p>No data fields have been defined for this asset.</p>
+                            <button className="btn btn-primary" onClick={() => setShowAddField(true)}>
+                                <i data-lucide="plus"></i>
+                                Add First Field
+                            </button>
+                        </div>
+                    )}
+
+                    {/* Field Detail Modal */}
+                    {selectedField && (
+                        <FieldDetailModal 
+                            field={selectedField} 
+                            onClose={() => setSelectedField(null)}
+                            onUpdate={onRefresh}
+                        />
+                    )}
+                </div>
+            );
+        }
+
+        function FieldDetailModal({ field, onClose, onUpdate }) {
+            const [activeFieldTab, setActiveFieldTab] = useState('overview');
+
+            const getPrivacyFlags = () => {
+                const flags = [];
+                if (field.contains_pii) flags.push('PII');
+                if (field.contains_phi) flags.push('PHI');
+                if (field.contains_pci) flags.push('PCI');
+                return flags;
+            };
+
+            return (
+                <div className="modal-overlay" onClick={onClose}>
+                    <div className="modal-content large" onClick={e => e.stopPropagation()}>
+                        <div className="modal-header">
+                            <h2>{field.field_name}</h2>
+                            <button className="close-button" onClick={onClose}>
+                                <i data-lucide="x"></i>
+                            </button>
+                        </div>
+
+                        <div className="field-detail-tabs">
+                            <button 
+                                className={`tab-btn ${activeFieldTab === 'overview' ? 'active' : ''}`}
+                                onClick={() => setActiveFieldTab('overview')}
+                            >
+                                Overview
+                            </button>
+                            <button 
+                                className={`tab-btn ${activeFieldTab === 'compliance' ? 'active' : ''}`}
+                                onClick={() => setActiveFieldTab('compliance')}
+                            >
+                                Compliance
+                            </button>
+                            <button 
+                                className={`tab-btn ${activeFieldTab === 'privacy' ? 'active' : ''}`}
+                                onClick={() => setActiveFieldTab('privacy')}
+                            >
+                                Privacy & Security
+                            </button>
+                        </div>
+
+                        <div className="modal-body">
+                            {activeFieldTab === 'overview' && (
+                                <div className="field-overview">
+                                    <div className="field-info-grid">
+                                        <div className="info-item">
+                                            <span className="label">Field Name:</span>
+                                            <span className="value">{field.field_name}</span>
+                                        </div>
+                                        <div className="info-item">
+                                            <span className="label">Business Name:</span>
+                                            <span className="value">{field.business_name || 'Not specified'}</span>
+                                        </div>
+                                        <div className="info-item">
+                                            <span className="label">Data Type:</span>
+                                            <span className="value">{field.data_type || 'Unknown'}</span>
+                                        </div>
+                                        <div className="info-item">
+                                            <span className="label">Length:</span>
+                                            <span className="value">{field.field_length || 'Not specified'}</span>
+                                        </div>
+                                        <div className="info-item">
+                                            <span className="label">Nullable:</span>
+                                            <span className="value">{field.is_nullable ? 'Yes' : 'No'}</span>
+                                        </div>
+                                        <div className="info-item">
+                                            <span className="label">Sensitivity Level:</span>
+                                            <span className="value">{field.sensitivity_level}</span>
+                                        </div>
+                                    </div>
+
+                                    {field.field_description && (
+                                        <div className="field-description-section">
+                                            <h4>Description</h4>
+                                            <p>{field.field_description}</p>
+                                        </div>
+                                    )}
+
+                                    {field.valid_values && field.valid_values.length > 0 && (
+                                        <div className="valid-values-section">
+                                            <h4>Valid Values</h4>
+                                            <div className="valid-values">
+                                                {field.valid_values.map((value, idx) => (
+                                                    <span key={idx} className="valid-value">{value}</span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+
+                            {activeFieldTab === 'compliance' && (
+                                <div className="field-compliance">
+                                    {field.compliance_details && field.compliance_details.length > 0 ? (
+                                        <div className="compliance-requirements">
+                                            {field.compliance_details.map((comp, idx) => (
+                                                <div key={idx} className="compliance-requirement-card">
+                                                    <h5>{comp.compliance_requirement?.requirement_name}</h5>
+                                                    <div className="compliance-status-info">
+                                                        <span className="status" style={{ 
+                                                            color: comp.compliance_status === 'Compliant' ? '#10b981' : '#ef4444' 
+                                                        }}>
+                                                            {comp.compliance_status}
+                                                        </span>
+                                                        <span className="risk-level" style={{ 
+                                                            color: comp.risk_level === 'Critical' ? '#ef4444' : '#f59e0b' 
+                                                        }}>
+                                                            {comp.risk_level} Risk
+                                                        </span>
+                                                    </div>
+                                                    {comp.assessment_notes && (
+                                                        <p className="assessment-notes">{comp.assessment_notes}</p>
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <div className="no-compliance">
+                                            <p>No compliance requirements assigned to this field.</p>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+
+                            {activeFieldTab === 'privacy' && (
+                                <div className="field-privacy">
+                                    <div className="privacy-flags">
+                                        <h4>Privacy Classification</h4>
+                                        <div className="privacy-indicators">
+                                            {getPrivacyFlags().length > 0 ? (
+                                                getPrivacyFlags().map(flag => (
+                                                    <span key={flag} className="privacy-flag">{flag}</span>
+                                                ))
+                                            ) : (
+                                                <span className="no-privacy">No privacy-sensitive data detected</span>
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    <div className="security-requirements">
+                                        <h4>Security Requirements</h4>
+                                        <div className="security-info">
+                                            <div className="security-item">
+                                                <span className="label">Data Classification:</span>
+                                                <span className="value">{field.data_classification || 'Not classified'}</span>
+                                            </div>
+                                            <div className="security-item">
+                                                <span className="label">Masking Required:</span>
+                                                <span className="value">
+                                                    {field.compliance_details?.some(c => c.data_masking_required) ? 'Yes' : 'No'}
+                                                </span>
+                                            </div>
+                                            <div className="security-item">
+                                                <span className="label">Encryption Required:</span>
+                                                <span className="value">
+                                                    {field.compliance_details?.some(c => c.encryption_required) ? 'Yes' : 'No'}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        function AssetHistoryTab({ history }) {
+            return (
+                <div className="history-content">
+                    <div className="history-timeline">
+                        {history.map((entry, idx) => (
+                            <div key={idx} className="history-entry">
+                                <div className="history-marker"></div>
+                                <div className="history-card">
+                                    <div className="history-header">
+                                        <span className="history-action">{entry.action}</span>
+                                        <span className="history-date">{new Date(entry.performed_at).toLocaleString()}</span>
+                                    </div>
+                                    <div className="history-details">
+                                        <p className="history-user">by {entry.performed_by?.display_name || 'System'}</p>
+                                        {entry.old_status && entry.new_status && (
+                                            <p className="status-change">
+                                                Status changed from <span className="old-status">{entry.old_status}</span> to <span className="new-status">{entry.new_status}</span>
+                                            </p>
+                                        )}
+                                        {entry.comments && (
+                                            <p className="history-comments">{entry.comments}</p>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {history.length === 0 && (
+                        <div className="empty-history">
+                            <i data-lucide="clock" className="empty-icon"></i>
+                            <h3>No History Available</h3>
+                            <p>No approval history is recorded for this asset.</p>
+                        </div>
+                    )}
                 </div>
             );
         }

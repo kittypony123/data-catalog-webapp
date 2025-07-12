@@ -145,15 +145,114 @@ def get_assets():
 @assets_bp.route('/<int:asset_id>', methods=['GET'])
 @token_required
 def get_asset(asset_id):
-    """Get specific asset with relationships"""
+    """Get specific asset with comprehensive details including compliance"""
     asset = DataAsset.query.get_or_404(asset_id)
     
     # Update last accessed
     asset.update_last_accessed()
     
+    # Get comprehensive asset data with compliance
+    asset_data = asset.to_dict(include_relationships=True, include_compliance=True)
+    
+    # Get approval history
+    history = [h.to_dict() for h in asset.approval_history.order_by(ApprovalHistory.performed_at.desc()).limit(10)]
+    
+    # Get compliance details if available
+    compliance_details = None
+    try:
+        from backend.models import AssetCompliance, ComplianceRequirement
+        
+        # Get all compliance links for this asset
+        compliance_links = db.session.query(AssetCompliance, ComplianceRequirement)\
+            .join(ComplianceRequirement, AssetCompliance.compliance_id == ComplianceRequirement.compliance_id)\
+            .filter(AssetCompliance.asset_id == asset_id)\
+            .order_by(AssetCompliance.assessment_date.desc().nullslast())\
+            .all()
+        
+        compliance_details = []
+        for link, requirement in compliance_links:
+            link_data = link.to_dict()
+            link_data['requirement_details'] = requirement.to_dict()
+            link_data['is_overdue'] = link.is_overdue()
+            link_data['days_until_review'] = link.days_until_review()
+            compliance_details.append(link_data)
+            
+        # Calculate overall compliance metrics
+        asset_data['compliance_metrics'] = {
+            'overall_status': asset.get_overall_compliance_status(),
+            'risk_score': asset.get_risk_score(),
+            'total_requirements': len(compliance_details),
+            'compliant_count': len([c for c in compliance_details if c['compliance_status'] == 'Compliant']),
+            'overdue_count': len([c for c in compliance_details if c['is_overdue']]),
+            'critical_risks': len([c for c in compliance_details if c['risk_level'] == 'Critical'])
+        }
+        
+    except ImportError:
+        # Compliance module not available
+        compliance_details = []
+        asset_data['compliance_metrics'] = None
+    
+    # Get business glossary terms if available
+    glossary_terms = None
+    try:
+        from backend.models import TermUsage, BusinessTerm
+        
+        term_usages = db.session.query(TermUsage, BusinessTerm)\
+            .join(BusinessTerm, TermUsage.term_id == BusinessTerm.term_id)\
+            .filter(TermUsage.asset_id == asset_id)\
+            .all()
+        
+        glossary_terms = []
+        for usage, term in term_usages:
+            term_data = usage.to_dict()
+            term_data['term_details'] = term.to_dict()
+            glossary_terms.append(term_data)
+            
+    except ImportError:
+        # Glossary module not available
+        glossary_terms = []
+    
+    # Get data lineage (upstream and downstream assets)
+    lineage_data = {
+        'upstream': [],
+        'downstream': []
+    }
+    
+    # Upstream relationships (where this asset is the target)
+    upstream_rels = asset.upstream_relationships.all()
+    for rel in upstream_rels:
+        upstream_asset = rel.source_asset
+        lineage_data['upstream'].append({
+            'asset': upstream_asset.to_dict(),
+            'relationship': rel.to_dict()
+        })
+    
+    # Downstream relationships (where this asset is the source)
+    downstream_rels = asset.downstream_relationships.all()
+    for rel in downstream_rels:
+        downstream_asset = rel.target_asset
+        lineage_data['downstream'].append({
+            'asset': downstream_asset.to_dict(),
+            'relationship': rel.to_dict()
+        })
+    
+    # Get related assets (same category or similar tags)
+    related_assets = []
+    if asset.category_id:
+        similar_assets = DataAsset.query.filter(
+            DataAsset.category_id == asset.category_id,
+            DataAsset.asset_id != asset_id,
+            DataAsset.approval_status == 'Approved'
+        ).limit(5).all()
+        related_assets = [a.to_dict() for a in similar_assets]
+    
     return jsonify({
-        'asset': asset.to_dict(include_relationships=True),
-        'history': [h.to_dict() for h in asset.approval_history.order_by(ApprovalHistory.performed_at.desc()).limit(10)]
+        'asset': asset_data,
+        'compliance': compliance_details,
+        'glossary_terms': glossary_terms,
+        'lineage': lineage_data,
+        'related_assets': related_assets,
+        'approval_history': history
     })
 
 
