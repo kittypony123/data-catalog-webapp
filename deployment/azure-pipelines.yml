@@ -1,0 +1,149 @@
+# Azure DevOps Pipeline for Data Catalog Web App
+
+trigger:
+  branches:
+    include:
+      - main
+      - develop
+  paths:
+    exclude:
+      - README.md
+      - docs/*
+
+variables:
+  - group: data-catalog-variables
+  - name: pythonVersion
+    value: '3.9'
+  - name: azureServiceConnection
+    value: 'azure-service-connection'
+  - name: webAppName
+    value: 'data-catalog-webapp'
+  - name: resourceGroupName
+    value: 'data-catalog-rg'
+
+stages:
+  - stage: Build
+    displayName: 'Build and Test'
+    jobs:
+      - job: BuildTest
+        displayName: 'Build and Test Job'
+        pool:
+          vmImage: 'ubuntu-latest'
+        
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: '$(pythonVersion)'
+            displayName: 'Use Python $(pythonVersion)'
+          
+          - script: |
+              python -m pip install --upgrade pip
+              pip install -r requirements.txt
+            displayName: 'Install dependencies'
+          
+          - script: |
+              pip install pytest pytest-cov pytest-flask
+              pytest tests/ --junitxml=junit/test-results.xml --cov=backend --cov-report=xml
+            displayName: 'Run tests'
+          
+          - task: PublishTestResults@2
+            condition: succeededOrFailed()
+            inputs:
+              testResultsFiles: '**/test-*.xml'
+              testRunTitle: 'Publish test results for Python $(pythonVersion)'
+          
+          - task: PublishCodeCoverageResults@1
+            inputs:
+              codeCoverageTool: Cobertura
+              summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.xml'
+          
+          - script: |
+              # Security check
+              pip install safety bandit
+              safety check
+              bandit -r backend/ -f json -o bandit-report.json || true
+            displayName: 'Security checks'
+          
+          - task: ArchiveFiles@2
+            inputs:
+              rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+              includeRootFolder: false
+              archiveType: 'zip'
+              archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+              replaceExistingArchive: true
+            displayName: 'Archive files'
+          
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'drop'
+              publishLocation: 'Container'
+            displayName: 'Upload package'
+
+  - stage: DeployDev
+    displayName: 'Deploy to Development'
+    dependsOn: Build
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))
+    jobs:
+      - deployment: DeployToDev
+        displayName: 'Deploy to Development Environment'
+        pool:
+          vmImage: 'ubuntu-latest'
+        environment: 'development'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: AzureWebApp@1
+                  inputs:
+                    azureSubscription: '$(azureServiceConnection)'
+                    appType: 'webAppLinux'
+                    appName: '$(webAppName)-dev'
+                    resourceGroupName: '$(resourceGroupName)'
+                    package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+                    runtimeStack: 'PYTHON|3.9'
+                    appSettings: |
+                      -FLASK_ENV development
+                      -FLASK_SECRET_KEY $(FLASK_SECRET_KEY_DEV)
+                      -DB_USERNAME $(DB_USERNAME_DEV)
+                      -DB_PASSWORD $(DB_PASSWORD_DEV)
+                      -DB_HOST $(DB_HOST_DEV)
+                      -DB_NAME $(DB_NAME_DEV)
+                      -AZURE_TENANT_ID $(AZURE_TENANT_ID)
+                      -AZURE_CLIENT_ID $(AZURE_CLIENT_ID_DEV)
+                      -AZURE_CLIENT_SECRET $(AZURE_CLIENT_SECRET_DEV)
+                      -APP_BASE_URL $(APP_BASE_URL_DEV)
+
+  - stage: DeployProd
+    displayName: 'Deploy to Production'
+    dependsOn: Build
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+    jobs:
+      - deployment: DeployToProd
+        displayName: 'Deploy to Production Environment'
+        pool:
+          vmImage: 'ubuntu-latest'
+        environment: 'production'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: AzureWebApp@1
+                  inputs:
+                    azureSubscription: '$(azureServiceConnection)'
+                    appType: 'webAppLinux'
+                    appName: '$(webAppName)'
+                    resourceGroupName: '$(resourceGroupName)'
+                    package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+                    runtimeStack: 'PYTHON|3.9'
+                    appSettings: |
+                      -FLASK_ENV production
+                      -FLASK_SECRET_KEY $(FLASK_SECRET_KEY_PROD)
+                      -DB_USERNAME $(DB_USERNAME_PROD)
+                      -DB_PASSWORD $(DB_PASSWORD_PROD)
+                      -DB_HOST $(DB_HOST_PROD)
+                      -DB_NAME $(DB_NAME_PROD)
+                      -AZURE_TENANT_ID $(AZURE_TENANT_ID)
+                      -AZURE_CLIENT_ID $(AZURE_CLIENT_ID_PROD)
+                      -AZURE_CLIENT_SECRET $(AZURE_CLIENT_SECRET_PROD)
+                      -APP_BASE_URL $(APP_BASE_URL_PROD)
